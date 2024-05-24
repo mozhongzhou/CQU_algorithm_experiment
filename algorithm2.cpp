@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int Partition(int a[], int low, int high)
 {
     int i = low, j = high;
@@ -15,7 +16,8 @@ int Partition(int a[], int low, int high)
     a[i] = povit;
     return i;
 }
-int Solve(int a[], int n)
+
+int Solve(int a[], int n, int &pivot)
 {
     int low = 0, high = n - 1;
     bool flag = true;
@@ -23,46 +25,49 @@ int Solve(int a[], int n)
     {
         int i = Partition(a, low, high);
         if (i == n / 2 - 1)
+        {
             flag = false;
+            pivot = a[i];
+        }
         else if (i < n / 2 - 1)
             low = i + 1;
         else
             high = i - 1;
     }
     int s1 = 0, s2 = 0;
+    printf("\n子数组1:");
     for (int i = 0; i < n / 2; i++)
+    {
         s1 += a[i];
+        printf("%3d", a[i]);
+    }
+    printf("\n子数组2:");
     for (int j = n / 2; j < n; j++)
+    {
         s2 += a[j];
+        printf("%3d", a[j]);
+    }
     return s2 - s1;
 }
-void display(int a[], int low, int high)
-{
-    for (int i = low; i <= high; i++)
-        printf("%3d", a[i]);
-    printf("\n");
-}
+
 int main()
 {
     printf("实验结果:\n");
-    // 第一个测试数据
+
     int a[] = {1, 3, 5, 7, 9, 2, 4, 6, 8};
     int n = sizeof(a) / sizeof(a[0]);
-    printf("初始序列A:");
-    display(a, 0, n - 1);
-    printf("求解结果%d\n", Solve(a, n));
-    printf("划分结果A1:");
-    display(a, 0, n / 2 - 1);
-    printf("\t\tA2:");
-    display(a, n / 2, n - 1);
-    // 第二个测试数据
+    printf("初始序列:");
+    for (int i = 0; i < n; i++)
+        printf("%3d", a[i]);
+    int pivot;
+    int result = Solve(a, n, pivot);
+    printf("\n求解结果%d，划分点%d\n", result, pivot);
+
     int b[] = {1, 3, 5, 7, 9, 10, 2, 4, 6, 8};
     int m = sizeof(b) / sizeof(b[0]);
-    printf("初始序列B:");
-    display(b, 0, m - 1);
-    printf("求解结果%d\n", Solve(b, m));
-    printf("划分结果B1:");
-    display(b, 0, m / 2 - 1);
-    printf("\t\tB2:");
-    display(b, m / 2, m - 1);
+    printf("初始序列:");
+    for (int i = 0; i < m; i++)
+        printf("%3d", b[i]);
+    result = Solve(b, m, pivot);
+    printf("\n求解结果%d，划分点%d\n", result, pivot);
 }
