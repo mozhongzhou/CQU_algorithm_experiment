@@ -1,0 +1,1747 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --of-theme-color: #07eda5;
+    --of-theme-color-dark: #414164;
+    --of-darkest-color: #1f2025;
+    --of-darker-color: #25272e;
+    --of-dark-color: #626872;
+    --of-dark-color2: #222227;
+    --of-strong: #CB7731;
+    --of-strong-code: #BB8ADE;
+    --of-font-size: 16.5px;
+    /*字体大小*/
+    --of-selection: #4a89dc;
+    --of-selection-text: white;
+
+    --bg-color: var(--of-darker-color);
+    /* 侧边栏颜色 */
+    --side-bar-bg-color: var(--of-darkest-color);
+    --text-color: white;
+    /* 这才是文字颜色 */
+    --text-color-main: rgb(255, 255, 255);
+    /* 选中文字的颜色 */
+    --select-text-bg-color: var(--of-theme-color-dark);
+    /* 被激活的目录背景 */
+    --item-hover-bg-color: var(--of-dark-color);
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #fff;
+    --window-border: 1px solid #333;
+    /* 被激活的文件背景 */
+    --active-file-bg-color: var(--of-dark-color);
+    --active-file-border-color: var(--of-theme-color);
+    --primary-color: var(--of-theme-color);
+    --active-file-text-color: #fff;
+    --item-hover-text-color: #fff;
+    /* 编辑HTML文件 */
+    --rawblock-edit-panel-bd: var(--of-dark-color);
+    --search-select-bg-color: #3c3c3c;
+
+    --code-bg-color: var(--of-dark-color);
+    /* --code-bg-color: #31302e; */
+    --footer-bg-color: var(--side-bar-bg-color);
+    --table-bg-darker-color: var(--of-dark-color2);
+    --table-bg-color: var(--of-dark-color);
+    --table-bg-color2: var(--of-darkest-color);
+    --table-thead-color: var(--of-darkest-color);
+    --md-code-color: var(--of-strong-code);
+    --table-edit-color: var(--of-darkest-color);
+    --task-list-border-color: #ffffff;
+    --task-list-black-border-color: #ffffff;
+    /* --task-list-bg-color: rgb(176, 21, 21); */
+    --task-list-checked-color: #df570e;
+    /* 设置导航栏选中的背景颜色 */
+    --nav-group-item-color: var(--of-theme-color-dark);
+    --select-background: var(--of-theme-color-dark);
+    --other-main-color: var(--of-theme-color);
+    --hover-color: var(--of-dark-color2);
+    /* 引用的背景颜色 */
+    --blockquote-color: var(--of-dark-color);
+    /* 源代码被激活的颜色 */
+    --codemirror-color: var(--of-dark-color);
+    /* 右键菜单按下 */
+    --menu-item-container-btn-hover: var(--of-dark-color2);
+    /* 右键菜单按钮边框 */
+    --menu-item-container-btn: var(--of-theme-color-dark);
+    /* 右键菜单和字数统计 */
+    --context-menu-color: var(--of-darkest-color);
+    /* tooltip颜色（右键菜单按按钮时显示提示的颜色） */
+    --tooltip-color: var(--of-darkest-color);
+    /* tooltip文字颜色*/
+    --tooltip-text-color: white;
+    /* 滚动条颜色 */
+    --scrollbar-color: var(--of-theme-color-dark);
+    /* 源代码模式光标 */
+    --code-cursor-color: var(--of-theme-color);
+    /* 返回按钮 */
+    --back-btn-color: var(--of-theme-color);
+    /* 高亮文字颜色 */
+    --highlight-text-color: var(--of-darker-color);
+
+    --ofcodetext: Inconsolata, Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+    --oftext: 'KeepStyleFont', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    --text-font: var(--oftext);
+    /*正文字体*/
+    --title-font: var(--oftext);
+    /*标题字体*/
+    --text-line-height: 1.7;
+    /*正文行间距*/
+    --code-line-height: 1.6;
+    /*代码块行间距*/
+    --p-spacing: 1.5rem;
+    /*段间距*/
+}
+
+.custom-text {
+    font-family: var(--oftext);
+    /* 使用自定义字体，如果无法加载，则使用备用字体 */
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+html {
+    font-size: var(--of-font-size);
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: var(--text-line-height);
+}
+
+#write {
+    max-width: 914px;
+}
+
+
+@media only screen and (min-width: 1400px) {
+    #write {
+        max-width: 1024px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    #write {
+        max-width: 1200px;
+    }
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    /* color: #d0d0d0; */
+    color: var(--text-color-main);
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: var(--code-bg-color);
+}
+
+.native-window #md-notification {
+    border: 1px solid var(--select-background);
+}
+
+.popover.bottom>.arrow:after {
+    border-bottom-color: var(--code-bg-color);
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: var(--text-font);
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+h1 {
+    color: #da5913 !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--title-font);
+    font-weight: bold;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: #ff6666;
+    line-height: 1.4;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--p-spacing);
+    letter-spacing: -1.5px;
+    /* border-bottom: 1px solid #383838; */
+    margin-top: 1em;
+}
+
+h2 {
+    font-size: 1.63rem;
+    margin-bottom: var(--p-spacing);
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.6rem;
+    margin-bottom: var(--p-spacing);
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    margin-bottom: var(--p-spacing);
+}
+
+h5 {
+    font-size: 0.97rem;
+    margin-bottom: var(--p-spacing);
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    margin-bottom: var(--p-spacing);
+    /* color: #d3d3d3; */
+}
+
+img {
+    border-radius: 8px;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+@media (min-width: 980px) {
+
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background: var(--of-selection);
+    color: var(--of-selection-text);
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: var(--of-selection);
+    color: var(--of-selection-text);
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+li.md-list-item::marker {
+    color: #10eaac;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+    color: var(--of-strong);
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+    color: #87939A;
+}
+
+/* blockquote {
+    margin: 2em 0;
+    border-left: solid 5px var(--other-main-color);
+    padding: 1.5em;
+    background: var(--blockquote-color);
+    color: white;
+} */
+
+blockquote {
+    color: #304455;
+    border-radius: 2px;
+    padding: 10px 16px;
+    background-color: #fdefee;
+    position: relative;
+    border-left: none;
+}
+
+/*quote block*/
+blockquote:before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 4px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #e95f59;
+    border-radius: 2px;
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.9rem;
+    font-family: var(--ofcodetext);
+}
+
+code,
+tt,
+var {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--md-code-color);
+    border-radius: 0.2rem;
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: var(--code-bg-color);
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
+}
+
+/* 代码块叠成背景 */
+/* pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #31302e;
+} */
+pre.md-fences {
+    font-size: 1rem;
+    padding: 0.5rem !important;
+    border-radius: 8px;
+    word-wrap: normal;
+    /* background-color: var(--code-bg-color); */
+    border: none;
+    font-family: var(--ofcodetext);
+}
+
+/* 代码数字块 */
+.CodeMirror-gutters {
+    /* background: var(--code-bg-color); */
+    /* border-right: 1px solid transparent; */
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 0.2rem 0.4rem;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: var(--other-main-color);
+    /* 下划线颜色 */
+    /* variable */
+}
+
+a {
+    color: #6693B3;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+/* 高亮颜色 */
+mark {
+    background: var(--other-main-color);
+    /* color: white; */
+    color: var(--highlight-text-color);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.2rem;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+mark a,
+mark .md-content.md-url {
+    color: var(--highlight-text-color);
+}
+
+mark a:hover {
+    color: white;
+}
+
+mark code {
+    color: var(--highlight-text-color);
+    border-radius: 0.2rem;
+    border: 1px solid var(--highlight-text-color);
+    background: none;
+    padding: 0.1rem 0.35rem;
+}
+
+table a {
+    color: var(--primary-color);
+}
+
+table tr {
+    border-top: 1px solid #212121;
+    margin: 0;
+    padding: 0;
+}
+
+table tr th {
+    font-weight: bold;
+    color: var(--other-main-color);
+    border: 1px solid #383838;
+    border-bottom: 0;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table tr td {
+    border: 1px solid #383838;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+/* th,
+td {
+    border: solid 1px #544e47;
+} */
+
+
+/* 设置表格头部行的样式 */
+th,
+th {
+    background-color: var(--table-thead-color);
+}
+
+/* 设置奇偶行的背景颜色 */
+
+tr:nth-child(2n) {
+    background-color: var(--table-bg-darker-color);
+}
+
+tr:nth-child(2n + 1) {
+    background-color: var(--table-bg-color);
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item>input {
+    top: auto;
+}
+
+.md-task-list-item>input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--task-list-border-color);
+    /* background-color: var(--task-list-bg-color); */
+    margin-top: -0.4rem;
+    border-radius: 4px
+}
+
+/* 任务列表 */
+.md-task-list-item>input:checked:before,
+.md-task-list-item>input[checked]:before {
+    content: '\2713';
+    font-size: 1rem;
+    line-height: 0.625rem;
+    color: var(--task-list-checked-color);
+    /* background-color: var(--task-list-checked-color); */
+    border-radius: 4px;
+    border: 2px solid var(--task-list-black-border-color);
+}
+
+
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: var(--select-background);
+}
+
+#typora-quick-open {
+    background-color: var(--select-background);
+}
+
+#typora-quick-open input {
+    background-color: var(--select-background);
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: var(--other-main-color);
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color: var(--select-background);
+}
+
+.typora-search-spinner>div {
+    background-color: #fff;
+}
+
+/* #write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+} */
+#write pre.md-meta-block {
+    font-size: 0.8rem;
+    border: 1px dashed #ccc;
+    border-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    line-height: 1.45;
+    background: transparent;
+    font-family: var(--ofcodetext);
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: var(--table-edit-color);
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color: var(--select-background);
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background: var(--select-background);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom: 0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: var(--item-hover-bg-color);
+    background-color: var(--item-hover-bg-color);
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: var(--other-main-color);
+    opacity: 0.8;
+}
+
+.md-inline-math svg {
+    color: #c6c1b8;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+/* 退出菜单 */
+
+.modal-content {
+    background: var(--bg-color);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.modal-title {
+    font-size: 2.5rem;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.modal-open .modal.fade.in {
+    background: none;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.md-table-resize-popover {
+    background-color: var(--code-bg-color);
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/* 右键菜单和字数统计 */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color: var(--context-menu-color);
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+    opacity: 1;
+}
+
+/* 页尾模糊 */
+
+footer {
+    backdrop-filter: saturate(120%) blur(20px) brightness(0.85);
+    border: none !important;
+    background: none;
+    background-color: var(--footer-bg-color);
+}
+
+/* footer {
+    color: inherit;
+} */
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1 {
+    color: inherit;
+}
+
+.long-btn {
+    margin-bottom: 12px;
+    margin-left: 2px;
+    background-color: var(--of-darkest-color);
+    border: 1px solid #383838;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.long-btn:hover {
+    background-color: var(--other-main-color);
+    color: black !important;
+}
+
+#m-import-local:hover .preference-item-hint {
+    color: black !important;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-document-table {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#recent-file-panel {
+    padding: 10px;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+#recent-file-panel thead tr {
+    background-color: var(--table-thead-color);
+}
+
+#recent-file-panel tbody tr:nth-child(2n) {
+    background-color: var(--table-bg-color2);
+}
+
+#recent-file-panel tbody tr:nth-child(2n + 1) {
+    background-color: var(--table-bg-darker-color);
+}
+
+
+.modal-footer .btn-default,
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+    border-radius: 0.3rem !important;
+}
+
+/* #recent-file-panel-action-btn:hover {
+    background-color: var(--hover-bg-color1);
+} */
+
+/* 一体化菜单 */
+
+#megamenu-back-btn {
+    border-color: transparent;
+    color: var(--back-btn-color);
+}
+
+.megamenu-menu-header:hover {
+    background-color: var(--item-hover-bg-color);
+}
+
+.megamenu-menu-panel .dropdown-menu>li>a {
+    color: inherit;
+    background-color: var(--select-background);
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+/* .megamenu-menu-sidebar tbody tr:hover td:nth-child(1) {
+    background-color: rgb(0, 0, 0);
+} */
+.megamenu-menu {
+    background-color: var(--side-bar-bg-color);
+}
+
+
+
+
+
+.btn-primary {
+    border: none;
+    border-radius: 0.3rem;
+    background-color: var(--other-main-color);
+    color: white !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    color: white;
+    background-color: var(--of-theme-color-dark) !important;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default.active,
+.open>.dropdown-toggle.btn-default {
+    /* color: white;
+    border: 1px solid #ddd; */
+    background-color: var(--of-theme-color-dark);
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color: var(--other-main-color);
+}
+
+/* 放大缩小的颜色 */
+#top-titlebar .toolbar-icon.btn:hover {
+    color: var(--item-hover-text-color);
+    background-color: var(--of-theme-color-dark);
+}
+
+/* 关闭按钮的颜色 */
+#top-titlebar #w-close:hover {
+    background-color: #e81123 !important;
+}
+
+#top-titlebar,
+#top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: var(--hover-color);
+    /* 字数统计按下去的颜色 */
+}
+
+#toggle-sourceview-btn:hover {
+    color: white;
+    background: var(--hover-color);
+    /* 查看源代码按下去的颜色 */
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container) {
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: white;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid white;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: white;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border: solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom: none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color: var(--tooltip-color);
+    color: var(--tooltip-text-color);
+}
+
+/* 右键菜单按下 */
+.menu-item-container:hover {
+    background-color: var(--menu-item-container-btn-hover);
+}
+
+/* 右键菜单按钮 */
+.menu-item-container a.menu-style-btn {
+    /* background: var(--menu-item-container-btn); */
+    border: 1px solid;
+    border-color: var(--menu-item-container-btn);
+    border-radius: 5px;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color: var(--select-background);
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: var(--select-background);
+}
+
+/* 偏好 */
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+
+.ty-preferences .btn-default:hover {
+    background: var(--select-background);
+}
+
+.ty-preferences select {
+    border: 1px solid #9a9a9a;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active,
+.export-item.active,
+.export-items-list-control,
+.export-detail {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: var(--code-bg-color);
+    /* background: var(--code-bg-color); */
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state,
+.html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+/*滚动条*/
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+    border-radius: 3px;
+    background-color: var(--scrollbar-color);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color: var(--nav-group-item-color) !important;
+}
+
+.md-search-hit {
+    background: var(--select-background);
+    color: white;
+}
+
+.md-search-hit * {
+    color: white;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+.clear-btn-icon {
+    top: 8px;
+}
+
+
+/* 代码模式 */
+.md-fences:before {
+    content: ' ';
+    display: block;
+    width: 100%;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-color: #282c34;
+    margin-bottom: -7px;
+    border-radius: 5px;
+    background-position: 10px 10px;
+}
+
+.cm-s-inner.CodeMirror {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    background-color: #292d3e;
+    color: #a6accd;
+    font-family: Consolas;
+    border-radius: 4px;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #c792ea;
+}
+
+.cm-s-inner .cm-operator {
+    color: #89ddff;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #eeffff;
+}
+
+.cm-s-inner .cm-variable-3,
+.cm-s-inner .cm-type {
+    color: #f07178;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #ffcb6b;
+}
+
+.cm-s-inner .cm-atom {
+    color: #f78c6c;
+}
+
+.cm-s-inner .cm-number {
+    color: #ff5370;
+}
+
+.cm-s-inner .cm-def {
+    color: #82aaff;
+}
+
+.cm-s-inner .cm-string {
+    color: #c3e88d;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f07178;
+}
+
+.cm-s-inner .cm-comment {
+    color: #676e95;
+}
+
+.cm-s-inner .cm-variable {
+    color: #f07178;
+}
+
+.cm-s-inner .cm-tag {
+    color: #ff5370;
+}
+
+.cm-s-inner .cm-meta {
+    color: #ffcb6b;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #c792ea;
+}
+
+.cm-s-inner .cm-property {
+    color: #c792ea;
+}
+
+.cm-s-inner .cm-qualifier {
+    color: #decb6b;
+}
+
+.cm-s-inner .cm-variable-3,
+.cm-s-inner .cm-type {
+    color: #decb6b;
+}
+
+.cm-s-inner .cm-error {
+    color: rgba(255, 255, 255, 1);
+    background-color: #ff5370;
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+    text-decoration: underline;
+    color: white !important;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid rgb(239, 112, 96);
+    z-index: 3;
+}
+
+
+</style><title>algorithm</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><p><span>算法设计与分析</span></p><p>&nbsp;</p><p><span>步骤 思路 过程图 时间复杂度 就这几个</span></p><h1 id='1概述'><span>1、概述</span></h1><h1 id='2递归'><span>2、递归</span></h1><h1 id='3分治法-基于递归思想'><span>3、分治法-基于递归思想</span></h1><h2 id='二路归并-tnonlogn'><strong><span>二路归并 T(n)=O(nlogn)</span></strong></h2><h3 id='自底向上'><span>自底向上</span></h3><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240614232032168.png" referrerpolicy="no-referrer" alt="image-20240614232032168"></p><h3 id='自顶向下'><span>自顶向下</span></h3><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240614232236646.png" referrerpolicy="no-referrer" alt="image-20240614232236646"></p><p><span>描述一个算法 解决问题的步骤</span></p><p><span>例：</span><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240614163709499.png" referrerpolicy="no-referrer" alt="image-20240614163709499"></p><h2 id='331查找最大和次大元素ton'><strong><span>3.3.1查找最大和次大元素T=O(n)</span></strong><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615005524873.png" referrerpolicy="no-referrer" alt="image-20240615005524873"></h2><p><span>分治法求最大和次大元素的思路可以简要概括为以下几个步骤：</span></p><ol start='' ><li><p><strong><span>分解</span></strong><span>：将当前问题的数据集分成两个大小大致相等的子集.</span></p></li><li><p><strong><span>解决</span></strong><span>：递归地在两个子集中分别找到最大和次大元素.</span></p></li><li><p><span>合并</span></p><p><span>：</span></p><ul><li><p><span>比较两个子集各自的最大元素,确定整个数据集的最大元素.</span></p></li><li><p><span>次大元素可能是以下几种情况之一：</span></p><ul><li><p><span>两个子集中较小的最大元素.</span></p></li><li><p><span>两个子集中的次大元素(如果最大元素来自同一个子集).</span></p></li></ul></li><li><p><span>对这些候选元素进行比较,确定整个数据集的次大元素.</span></p><p><span>4、</span><strong><span>直接解决</span></strong><span>：如果数据集足够小,直接通过比较操作找出最大和次大元素.</span></p></li></ul><p><span>通过这种方式,分治法将大问题分解为小问题处理,再将小问题的解合并为大问题的解,有效地减少了比较次数,提高了效率.</span></p></li></ol><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240614164023694.png" referrerpolicy="no-referrer" alt="image-20240614164023694"></p><h2 id='332折半查找tologn'><strong><span>3.3.2折半查找T=O(logn)</span></strong></h2><p><span>折半查找(也称为二分查找)是为了解决在一个有序数组中查找特定元素的问题.其基本思路如下：</span></p><ol start='' ><li><p><strong><span>初始化查找区间</span></strong><span>：设定查找区间的起始位置</span><code>low</code><span>和结束位置</span><code>high</code><span>,即</span><code>a[low..high]</code><span>是当前的查找区间.</span></p></li><li><p><strong><span>计算中点</span></strong><span>：首先确定该区间的中点位置</span><code>mid</code><span>,计算方法为</span><code>mid = ⌊(low + high) / 2⌋</code><span>.</span></p></li><li><p><strong><span>比较并缩小查找范围</span></strong><span>：</span></p><ul><li><p><span>若</span><code>k == a[mid]</code><span>,则查找成功并返回该元素的物理下标.</span></p></li><li><p><span>若</span><code>k &lt; a[mid]</code><span>,由于数组是有序的,可知</span><code>a[mid..high]</code><span>均大于</span><code>k</code><span>,因此如果数组中存在关键字等于</span><code>k</code><span>的元素,则该元素必定位于左子数组</span><code>a[low..mid-1]</code><span>中.因此,新的查找区间更新为左子数组</span><code>a[low..mid-1]</code><span>.</span></p></li><li><p><span>若</span><code>k &gt; a[mid]</code><span>,同理,要查找的</span><code>k</code><span>必在位于右子数组</span><code>a[mid+1..high]</code><span>中,因此新的查找区间更新为右子数组</span><code>a[mid+1..high]</code><span>.</span></p></li></ul></li><li><p><strong><span>重复查找</span></strong><span>：在新的查找区间内重复上述步骤,直到找到元素或查找区间为空.</span></p></li></ol><p><span>通过这种方式,折半查找每次都将查找区间减半,从而大大减少了需要比较的次数,提高了查找效率.折半查找的时间复杂度为O(log n),其中n是数组的长度.</span></p><h2 id='333寻找一个序列第k小元素ton-时间复杂度非常低-居然只有on-很特别'><strong><span>3.3.3寻找一个序列第k小元素</span><u><span>T=O(n)</span></u></strong><span> 时间复杂度非常低 居然只有On 很特别！</span></h2><p><span>注：这个算法在进行排序过程中比较元素与基准</span></p><p><span>类似于快排的双指针算法</span></p><p><span>分治法寻找一个序列中第k小元素的简要思路如下：</span></p><ol start='' ><li><p><strong><span>选择基准</span></strong><span>：从序列中随机选择一个元素作为基准(pivot).</span></p></li><li><p><strong><span>划分</span></strong><span>：将序列划分为两个子序列,一个包含所有小于基准的元素,另一个包含所有大于或等于基准的元素.</span></p></li><li><p><strong><span>确定位置</span></strong><span>：</span><strong><u><span>计算小于基准的元素数量</span></u></strong><code>n</code><span>.</span></p><ul><li><p><span>如果</span><code>n</code><span>正好等于</span><code>k-1</code><span>,则基准元素即为第k小元素,算法结束.</span></p></li><li><p><span>如果</span><code>n</code><span>大于</span><code>k-1</code><span>,则第k小元素位于小于基准的子序列中,对该子序列递归执行上述步骤.</span></p></li><li><p><span>如果</span><code>n</code><span>小于</span><code>k-1</code><span>,则第k小元素位于大于或等于基准的子序列中,对该子序列递归执行上述步骤,但是要寻找的是第</span><code>k-n-1</code><span>小元素.</span></p></li></ul></li><li><p><strong><span>递归</span></strong><span>：根据第3步的结果,递归地在相应的子序列中查找第k小元素.</span></p></li><li><p><strong><span>终止条件</span></strong><span>：当子序列足够小或满足特定条件时,直接计算第k小元素.</span></p></li></ol><p><span>通过这种方式,分治法能够有效地减少问题规模,逐步逼近第k小元素,直到找到为止</span></p><h2 id='334寻找两个等长有序序列中位数tnologn'><strong><span>3.3.4寻找两个等长有序序列中位数Tn=O(logn)</span></strong></h2><p><span>核心思路如下 </span></p><p><span>由于每个序列都是等长有序的,所以求解其中任意一个序列的中位数变得十分简单</span></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615141046259.png" referrerpolicy="no-referrer" alt="image-20240615141046259"></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615141054699.png" referrerpolicy="no-referrer" alt="image-20240615141054699"></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615141105952.png" referrerpolicy="no-referrer" alt="image-20240615141105952"></p><p><span>3.4求解组合问题</span></p><h2 id='341求解最大连续子序列和问题-分治法解决tonlogn'><strong><span>3.4.1求解最大连续子序列和问题 (分治法解决)T=O(nlogn)</span></strong></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615142619969.png" referrerpolicy="no-referrer" alt="image-20240615142619969"></p><p><strong><span>对比动态规划只需要O(n),动态规划往往时间复杂度低,但空间复杂度高</span></strong></p><p><span>使用分治法解决最大连续子序列和问题的思路是将序列分成两个子序列,</span><strong><span>分别求解左半部分和右半部分的最大子序列和,然后再找出跨越两个子序列的最大子序列和,最后这三者之中的最大值即为整个序列的最大子序列和</span></strong><span>.具体步骤如下：</span></p><ol start='' ><li><p><strong><span>分解</span></strong><span>：将序列从中间分成两个子序列.</span></p></li><li><p><strong><span>递归求解</span></strong><span>：</span></p><ul><li><p><span>递归地求解左半部分的最大子序列和.</span></p></li><li><p><span>递归地求解右半部分的最大子序列和.</span></p></li></ul></li><li><p><strong><span>合并</span></strong><span>：</span></p><ul><li><p><span>找出跨越左右两个子序列的最大子序列和.这需要从中间向左遍历找出最大子序列和,再从中间向右遍历找出最大子序列和,最后将这两个和相加.</span></p></li><li><p><span>将上述三个和(左半部分的最大子序列和、右半部分的最大子序列和、跨越两个子序列的最大子序列和)中的最大值作为整个序列的最大子序列和.</span></p></li></ul></li><li><p><strong><span>递归终止条件</span></strong><span>：当序列只包含一个元素时,返回该元素(如果该元素为正)或0(如果该元素为负),因为最大子序列和不会小于0.</span></p></li></ol><p><span>分治法解决这个问题的时间复杂度是</span><code>O(n log n)</code><span>,因为每次分解将问题规模减半,每层递归需要线性时间合并结果.</span></p><h2 id='342求解棋盘覆盖-略'><span>3.4.2求解棋盘覆盖 略</span></h2><h2 id='343循环日程安排-略'><span>3.4.3循环日程安排 略</span></h2><h2 id='351求解大整数乘法--优化的karatusba算法tnon159稍复杂'><span>3.5.1求解大整数乘法  优化的karatusba算法Tn=O(n^1.59)稍复杂</span></h2><p><span>分治法求解大整数乘法问题通常采用</span><strong><span>Karatsuba算法</span></strong><span>.这个算法基于分治思想,将大整数乘法问题分解为更小的子问题,从而减少了乘法操作的次数.Karatsuba算法的基本思路如下：</span></p><ol start='' ><li><p><strong><span>分解</span></strong><span>：假设有两个大整数</span><code>X</code><span>和</span><code>Y</code><span>,我们可以将它们分别分解为两部分.例如,</span><code>X = A * 10^n/2 + B</code><span>,</span><code>Y = C * 10^n/2 + D</code><span>,其中</span><code>A</code><span>和</span><code>C</code><span>是高位部分,</span><code>B</code><span>和</span><code>D</code><span>是低位部分,</span><code>n</code><span>是数字的长度(假设</span><code>X</code><span>和</span><code>Y</code><span>长度相同,如果不同可以在前面补零).</span></p></li><li><p><strong><span>递归求解子问题</span></strong><span>：按照普通乘法,我们需要计算四个乘积：</span><code>AC</code><span>,</span><code>AD</code><span>,</span><code>BC</code><span>,和</span><code>BD</code><span>.Karatsuba算法通过减少乘法次数来提高效率,只计算三个乘积：</span></p><ul><li><p><code>AC</code></p></li><li><p><code>BD</code></p></li><li><p><code>(A + B) * (C + D)</code><span>,然后从中减去</span><code>AC</code><span>和</span><code>BD</code><span>,得到</span><code>AD + BC</code><span>.</span></p></li></ul></li><li><p><strong><span>合并结果</span></strong><span>：根据上述三个乘积,我们可以得到最终结果：</span><code>X * Y = AC * 10^n + (AD + BC) * 10^n/2 + BD</code><span>.</span></p></li><li><p><strong><span>递归终止条件</span></strong><span>：当整数足够小,不再适合分解时,直接使用普通乘法计算.</span></p></li></ol><p><span>Karatsuba算法的时间复杂度是</span><code>O(n^log2(3))</code><span>或约</span><code>O(n^1.585)</code><span>,相比于普通乘法的</span><code>O(n^2)</code><span>有显著提高.这个算法之所以有效,是因为它通过减少乘法操作的次数来减少计算量,特别适用于大整数的乘法计算.</span></p><h2 id='352矩阵乘法tnon281太复杂了-略'><span>3.5.2矩阵乘法Tn=O(n^2.81)太复杂了 略</span></h2><p><span>分治法求解矩阵乘法问题通常指的是</span><strong><span>Strassen算法</span></strong><span>.这个算法通过减少矩阵乘法中的乘法操作次数来提高效率.传统的矩阵乘法需要8次乘法操作,而Strassen算法将其减少到7次.基本思路如下：</span></p><ol start='' ><li><p><strong><span>分解</span></strong><span>：将每个矩阵分成四个子矩阵.对于两个</span><code>n x n</code><span>的矩阵</span><code>A</code><span>和</span><code>B</code><span>,可以分别将它们分解为四个</span><code>n/2 x n/2</code><span>的子矩阵.即：</span></p><ul><li><p><code>A = [A11 A12; A21 A22]</code></p></li><li><p><code>B = [B11 B12; B21 B22]</code></p></li></ul></li><li><p><strong><span>递归求解子问题</span></strong><span>：计算7个矩阵乘法(而不是8个),这些乘法操作定义如下：</span></p><ul><li><p><code>M1 = (A11 + A22) * (B11 + B22)</code></p></li><li><p><code>M2 = (A21 + A22) * B11</code></p></li><li><p><code>M3 = A11 * (B12 - B22)</code></p></li><li><p><code>M4 = A22 * (B21 - B11)</code></p></li><li><p><code>M5 = (A11 + A12) * B22</code></p></li><li><p><code>M6 = (A21 - A11) * (B11 + B12)</code></p></li><li><p><code>M7 = (A12 - A22) * (B21 + B22)</code></p></li></ul></li><li><p><strong><span>合并结果</span></strong><span>：使用上述7个乘积来计算最终的矩阵乘法结果的四个子矩阵：</span></p><ul><li><p><code>C11 = M1 + M4 - M5 + M7</code></p></li><li><p><code>C12 = M3 + M5</code></p></li><li><p><code>C21 = M2 + M4</code></p></li><li><p><code>C22 = M1 - M2 + M3 + M6</code></p></li></ul></li><li><p><strong><span>递归终止条件</span></strong><span>：当子矩阵足够小,不再适合分解时,直接使用普通矩阵乘法计算.</span></p></li></ol><p><span>Strassen算法的时间复杂度是</span><code>O(n^log2(7))</code><span>或约</span><code>O(n^2.81)</code><span>,相比于普通矩阵乘法的</span><code>O(n^3)</code><span>有显著提高.这个算法之所以有效,是因为它通过减少乘法操作的次数来减少计算量,特别适用于大规模矩阵的乘法计算.然而,由于Strassen算法在实际计算中可能引入更多的舍入误差,对于需要高精度计算的应用场景,需要仔细考虑是否使用.</span></p><p><strong><span>并行计算不用看</span></strong></p><h1 id='4蛮力法'><span>4、蛮力法</span></h1><p><span>不讲时间复杂度的不看</span></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615151103350.png" referrerpolicy="no-referrer" alt="image-20240615151103350"></p><p><span>我他妈直接就把时间复杂度拉闷</span></p><p>&nbsp;</p><h2 id='424最大连续子序列和tnon优化优化从n3到n2到n已经是动态规划不再是蛮力'><strong><span>4.2.4最大连续子序列和T(n)=O(n)</span></strong><span>优化优化从n</span><sup><span>3</span></sup><span>到n</span><sup><span>2</span></sup><span>到n已经是动态规划，不再是蛮力</span></h2><p><img src="C:\Users\yanyifan\AppData\Roaming\Typora\typora-user-images\image-20240615151300155.png" referrerpolicy="no-referrer" alt="image-20240615151300155"></p><p><span>最暴力的O(n^3)蛮力法求解最大连续子序列和的思路：</span></p><ol start='' ><li><p><span>初始化最大和</span><code>maxSum</code><span>。</span></p></li><li><p><span>遍历数组，确定每个元素作为子序列起点。一重</span></p></li><li><p><span>对于每个起点，再次遍历数组，确定子序列的终点。 二重</span></p></li><li><p><span>对于每个起点和终点确定的子序列，遍历这个子序列，计算子序列的和</span><code>thisSum</code><span>。 三重</span></p></li><li><p><span>更新</span><code>maxSum</code><span>为</span><code>thisSum</code><span>和</span><code>maxSum</code><span>中的较大值。</span></p></li><li><p><span>重复步骤2到5，直到所有可能的起点和终点的子序列都被考虑过。</span></p></li><li><p><span>返回</span><code>maxSum</code><span>作为最大连续子序列和。</span></p></li></ol><hr /><p><span>优化到O(n^2)的蛮力法求解最大连续子序列和的思路：</span></p><ol start='' ><li><p><span>初始化最大和</span><code>maxSum</code><span>。</span></p></li><li><p><span>遍历数组，确定每个元素作为子序列起点。</span></p></li><li><p><span>从每个起点开始，逐步扩展子序列到数组末尾，同时计算并更新这个子序列的和</span><code>thisSum</code><span>。</span></p></li><li><p><span>对每个子序列，更新</span><code>maxSum</code><span>为</span><code>thisSum</code><span>和</span><code>maxSum</code><span>中的较大值。</span></p></li><li><p><span>重复步骤2到4，直到遍历完所有元素作为起点的情况。</span></p></li><li><p><span>返回</span><code>maxSum</code><span>作为最大连续子序列和。</span></p></li></ol><p><span>课堂练习不看</span></p><h2 id='425求解幂集-tnon2n-暴力到指数级时间复杂度'><strong><span>4.2.5求解幂集 T(n)=O(n*2</span><sup><span>n</span></sup><span>) 暴力到指数级时间复杂度</span></strong></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615152726941.png" referrerpolicy="no-referrer" alt="image-20240615152726941"></p><p><span>暴力法求解幂集问题的思路：</span></p><ol start='' ><li><p><span>首先，确定幂集的大小。对于包含n个元素的集合，其幂集包含2^n个子集（包括空集和自身）。</span></p></li><li><p><span>使用一个</span><strong><span>外层循环遍历从0到2</span><sup><span>n</span></sup><span>-1的所有整数。每个整数代表一个可能的子集，其中整数的二进制表示中的每一位对应集合中的一个元素。位为1表示该元素在子集中，位为0表示该元素不在子集中。</span></strong></p></li><li><p><span>对于每个整数，使用一个内层循环遍历其二进制表示的每一位。如果某位为1，则将对应的元素添加到当前子集中。</span></p></li><li><p><span>对每个整数，内层循环结束后，你会得到一个子集。将这个子集添加到幂集中。</span></p></li><li><p><span>重复步骤3和4，直到所有整数都被遍历。</span></p></li><li><p><span>返回幂集。</span></p></li></ol><p><span>这种方法直接枚举了所有可能的子集，因此是一种暴力解法。</span></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615153028854.png" referrerpolicy="no-referrer" alt="image-20240615153028854"></p><p><span>外层遍历2</span><sup><span>n</span></sup><span>,内层有n</span></p><h2 id='426-01背包可能性不大-略'><span>4.2.6 0/1背包可能性不大 略</span></h2><h2 id='427全排列问题-tnonn-很蠢-带有回溯的思想'><strong><span>4.2.7全排列问题 T(n)=O(n*n!)</span></strong><span> 很蠢 带有回溯的思想</span></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615162707509.png" referrerpolicy="no-referrer" alt="image-20240615162707509"></p><p><span>采用插空的蛮力法来求解全排列问题的思路是，对于每个元素，我们在当前排列的所有可能位置上尝试插入该元素。这种方法的关键在于，对于每个新元素，我们都尝试将其插入到已有排列的所有可能位置（包括排列的开头、所有元素之间的空隙，以及排列的末尾），然后对每种可能的新排列递归地重复这个过程，直到所有元素都被插入。</span></p><p><span>以下是这个思路的实现步骤：</span></p><ol start='' ><li><p><strong><span>递归函数定义</span></strong><span>：定义一个递归函数，该函数接受当前排列（初始时为空）、待插入的元素集合和结果集合作为参数。</span></p></li><li><p><strong><span>终止条件</span></strong><span>：如果待插入的元素集合为空，则将当前排列添加到结果集合中，因为这意味着所有元素都已经被成功插入。</span></p></li><li><p><strong><span>递归和回溯</span></strong><span>：对于待插入的元素集合中的每一个元素，尝试将其插入到当前排列的所有可能位置。对于每一种插入方式，更新当前排列和待插入的元素集合，然后递归调用自身。完成递归调用后，进行回溯，恢复当前排列和待插入的元素集合的状态，以便尝试下一个元素的插入。</span></p></li></ol><p><span>这也有回溯，不然实现不了啊</span></p><h2 id='428任务分配问题-略'><span>4.2.8任务分配问题 略</span></h2><p>&nbsp;</p><h2 id='43递归在蛮力法中的应用-稍微看看no'><span>4.3递归在蛮力法中的应用 稍微看看(no)</span></h2><p>&nbsp;</p><h2 id='44图的深度优先广度优先遍历'><span>4.4图的深度优先广度优先遍历</span></h2><h3 id='深度优先'><span>深度优先</span></h3><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615155338279.png" referrerpolicy="no-referrer" alt="image-20240615155338279"></p><h3 id='广度优先'><span>广度优先</span></h3><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615155401760.png" referrerpolicy="no-referrer" alt="image-20240615155401760"></p><p><span>深度与广度优先在思路上的重要区别是，深度是访问其中一个点的时候继续深度优先，广度是访问完1到n所有点后再从1到n每个依次广度优先</span></p><hr /><p><span>最短路问题 单源最短路 Dijkstra算法  bellman算法</span></p><p><span>最小生成树Kruskal Prim</span></p><h2 id='444迷宫稍微看看no'><span>4.4.4迷宫稍微看看(no)</span></h2><h1 id='5回溯法-基于递归思想'><span>5、回溯法-基于递归思想</span></h1><p><span>深度优先思想+剪枝</span></p><p><span>而回溯法更多用于寻找所有可行解.</span></p><p><span>子集树  排列树？</span></p><p><span>剪枝函数很重要</span></p><h2 id='一解空间为子集树'><span>一、解空间为子集树</span></h2><h3 id='53求解幂集-回溯法-草你吗的子集树求解步骤'><span>5.3求解幂集 回溯法 草你吗的子集树求解步骤</span></h3><p><strong><span>这个图有错</span></strong></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240614165723288.png" referrerpolicy="no-referrer" alt="image-20240614165723288"><span>输出1，3的时候显然错了，应该是dfs[1,0,1] 太明显了  这个很好理解</span></p><h3 id='54插入符号让结果为100-没有写出详细步骤的不看看看即可'><span>5.4插入符号让结果为100 (没有写出详细步骤的不看)(看看即可)</span></h3><h2 id='二解空间为排列树'><span>二、解空间为排列树</span></h2><h2 id='55-元素全排列-必考必看'><strong><span>5.5 元素全排列 必考必看</span></strong></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240614170106037.png" referrerpolicy="no-referrer" alt="image-20240614170106037"></p><p><span>回溯法求解全排列问题的排列树是一个递归构造的过程，其中每个节点代表了一个决策步骤。以下是绘制排列树的详细过程，以元素集 </span><code>{1, 2, 3}</code><span> 为例：</span></p><ol start='' ><li><p><strong><span>根节点</span></strong><span>：根节点是空的，表示还没有做出任何选择。</span></p></li><li><p><strong><span>第一层节点</span></strong><span>：从根节点出发，每个子节点代表选择了一个不同的元素作为排列的第一个元素。对于 </span><code>{1, 2, 3}</code><span>，这意味着根节点会有三个子节点，分别代表选择了 </span><code>1</code><span>、</span><code>2</code><span>、</span><code>3</code><span> 作为排列的开始。</span></p></li><li><p><strong><span>第二层节点</span></strong><span>：对于每个第一层的节点，再次进行选择，但这次不能选择已经被选择的元素。例如，如果第一层选择了 </span><code>1</code><span>，那么第二层的节点就代表选择 </span><code>2</code><span> 或 </span><code>3</code><span> 作为排列的第二个元素。</span></p></li><li><p><strong><span>第三层节点</span></strong><span>：继续这个过程，直到所有元素都被选择。每个叶节点代表了一个完整的排列。</span></p></li><li><p><strong><span>绘制</span></strong><span>：从根节点开始，按层绘制每个决策节点，使用线连接父节点和子节点，以表示决策的流程。</span></p></li></ol><p><span>以下是具体的绘制步骤：</span></p><p><span>根节点</span></p><p><span>│</span></p><p><span>├── 1</span></p><p><span>│  │</span></p><p><span>│  ├── 2 → 3 (完成一个排列：1 2 3)</span></p><p><span>│  └── 3 → 2 (完成一个排列：1 3 2)</span></p><p><span>│</span></p><p><span>├── 2</span></p><p><span>│  │</span></p><p><span>│  ├── 1 → 3 (完成一个排列：2 1 3)</span></p><p><span>│  └── 3 → 1 (完成一个排列：2 3 1)</span></p><p><span>│</span></p><p><span>└── 3</span></p><p><span>  │</span></p><p><span>  ├── 1 → 2 (完成一个排列：3 1 2)</span></p><p><span>  └── 2 → 1 (完成一个排列：3 2 1)</span></p><ul><li><p><span>每个节点表示一个决策点，节点上的数字表示选择了哪个元素。</span></p></li><li><p><span>箭头 </span><code>→</code><span> 表示决策的方向，指向下一个选择的元素。</span></p></li><li><p><span>每个从根节点到叶节点的路径代表了一种完整的排列。</span></p></li></ul><p><span>通过这种方式，你可以清晰地看到回溯法是如何逐步构建出所有可能的排列，并形成一个决策树的。这个树状结构帮助理解算法的执行流程，以及如何通过回溯来撤销选择，从而探索所有可能的排列组合。</span></p><p><span>感觉还是简单</span></p><p>&nbsp;</p><h2 id='514回溯法与深度优先遍历的异同-bikao'><strong><span>5.1.4回溯法与深度优先遍历的异同 bikao</span></strong></h2><p><span>同：  实现上遵循深度优先  一步一步往前探索</span></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240614170256825.png" referrerpolicy="no-referrer" alt="image-20240614170256825"></p><p><span>异：</span></p><p><span> 1、目的（访问序不同）</span></p><p><span>DFS强调 遍历 本质无序</span></p><p><span> 回溯强调求解过程 本质有序</span></p><p>&nbsp;</p><p><span>2、访问节点次数不同</span></p><p><span>DFS 访问过的节点不再访问</span></p><p><span>回溯 访问过的还可能再访问</span></p><p>&nbsp;</p><p><span>3、剪枝不同</span></p><p><span>DFS一般不考虑剪枝</span></p><p><span>回溯为了解决问题常涉及剪枝</span></p><p>&nbsp;</p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240614170313045.png" referrerpolicy="no-referrer" alt="image-20240614170313045"></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='52回溯法求解01背包-重点--重量恰好为w--重量不超过w-基本必考时间复杂度-o2n'><strong><span>5.2回溯法求解0/1背包 重点  重量恰好为W  重量不超过W 基本必考时间复杂度 O(2</span><sup><span>n</span></sup><span>)</span></strong></h2><p><span>先按照v/m把所有物品重新排列一次，这样可以简化子集树的样子</span></p><p><span>要少一层</span></p><p>&nbsp;</p><p><span>画树 画出剪枝后的版本</span></p><p><span>子集树 左剪枝 右剪枝是什么 </span><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240614170828809.png" referrerpolicy="no-referrer" alt="image-20240614170828809"><span> </span></p><p><span>1、装入背包重量和恰好为W</span></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615170839224.png" referrerpolicy="no-referrer" alt="image-20240615170839224"></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615170847703.png" referrerpolicy="no-referrer" alt="image-20240615170847703"></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615171010457.png" referrerpolicy="no-referrer" alt="image-20240615171010457"></p><p><span>简单</span></p><p><span>先说怎么画解空间树 </span></p><p><span>首先确定为子集树，不涉及排列的东西</span></p><p><span>定义如下东西：totalWeight总重量  totalValue总价值 weight[i]第i个物品重量 value[i]第i个物品价值 remainWeight=weight[i]+weight[i+1]+...+weight[n]剩余总量</span></p><p><span>剪枝条件：</span></p><p><span>左剪枝：仅考虑保留totalWeight+weight[i]≤W的左孩子节点</span></p><p><span>右剪枝 仅考虑保留totalWeight+remainingWeight-weight[i]≥W的右孩子节点</span></p><p><span>然后从上到下  根节点(totalWeight,totalValue,remainingWeight)从 i=0start  左1 右0 考虑选不选第i个物品</span></p><p>&nbsp;</p><h2 id='2装入背包重量和不超过w-o2n-右剪枝多了一个上界函数而已-仅此而已'><strong><span>2、装入背包重量和不超过W O(2</span><sup><span>n</span></sup><span>) 右剪枝多了一个上界函数而已 仅此而已</span></strong></h2><p><span>左剪枝不变</span></p><p><span>左剪枝：仅考虑保留totalWeight+weight[i]≤W的左孩子节点</span></p><p><span>右剪枝变为 用上界函数进行剪枝 仅保留bound(i,tw,tv)&gt;maxv的右孩子节点</span></p><p><span>这个maxv是基于深度优先动态更新出来的 先要从左侧深挖 一直深挖</span></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615192241595.png" referrerpolicy="no-referrer" alt="image-20240615192241595"></p><p><span>先把物品value/weight计算出来 然后重新建表</span></p><figure class='table-figure'><table><thead><tr><th><span>i</span></th><th><span>No</span></th><th><span>weight</span></th><th><span>value</span></th><th><span>value/weight</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>3</span></td><td><span>2</span></td><td><span>3</span></td><td><span>1.5</span></td></tr><tr><td><span>2</span></td><td><span>2</span></td><td><span>3</span></td><td><span>4</span></td><td><span>1.33</span></td></tr><tr><td><span>3</span></td><td><span>4</span></td><td><span>1</span></td><td><span>1</span></td><td><span>1</span></td></tr><tr><td><span>4</span></td><td><span>1</span></td><td><span>5</span></td><td><span>4</span></td><td><span>0.8</span></td></tr></tbody></table></figure><p><span>描述左剪枝条件 仅考虑totalWeight+weight[i]≤W的左孩子</span></p><p><span>右剪枝 仅考虑 bound(i,totalWeight,totalValue)≥maxv的情况 还是要取等 不然可能舍去共同最优解</span></p><p><span>其中bound用于贪心计算后续可能达到的最大价值，maxv为当前已知的最高价值情况</span></p><p><span>然后绘图</span></p><p>&nbsp;</p><h2 id='53-简单装载-重点中的重点to2n'><strong><span>5.3 简单装载 重点中的重点</span></strong><span>T=O(2</span><sup><span>n</span></sup><span>)</span></h2><p><span>复杂装载 不看</span></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615192232978.png" referrerpolicy="no-referrer" alt="image-20240615192232978"></p><p><span>乍一看 似乎比0/1背包还撇脱</span></p><p><span>重量和不超过但要尽可能接近W</span></p><ol start='' ><li><p><strong><span>初始化</span></strong><span>：设置最大重量</span><code>maxw</code><span>为0，当前重量</span><code>cw</code><span>为0。</span></p></li><li><p><strong><span>递归函数定义</span></strong><span>：定义一个递归函数</span><code>tryLoad(i, cw)</code><span>，其中</span><code>i</code><span>表示当前考虑的集装箱编号，</span><code>cw</code><span>表示当前的总重量。</span></p></li><li><p><strong><span>递归终止条件</span></strong><span>：如果</span><a href='vscode-file://vscode-app/c:/Users/yanyifan/AppData/Local/Programs/Microsoft VS Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html'><code>i</code></a><span>等于</span><code>n</code><span>（所有集装箱都考虑完毕）或者</span><code>cw</code><span>等于</span><code>W</code><span>，则更新</span><code>maxw</code><span>为</span><code>max(maxw, cw)</code><span>，并返回。</span></p></li><li><p><strong><span>递归选择</span></strong><span>：</span></p><ul><li><p><strong><span>选择装载</span></strong><span>：如果将当前集装箱</span><a href='vscode-file://vscode-app/c:/Users/yanyifan/AppData/Local/Programs/Microsoft VS Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html'><code>i</code></a><span>装上不超过载重量</span><code>W</code><span>，则递归调用</span><code>tryLoad(i+1, cw+wi)</code><span>。</span></p></li><li><p><strong><span>选择不装载</span></strong><span>：无论当前集装箱是否装载，都可以选择不装载当前集装箱，递归调用</span><code>tryLoad(i+1, cw)</code><span>。</span></p></li></ul></li><li><p><strong><span>回溯</span></strong><span>：在每次递归调用后，无需显式回溯，因为</span><code>cw</code><span>和</span><a href='vscode-file://vscode-app/c:/Users/yanyifan/AppData/Local/Programs/Microsoft VS Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html'><code>i</code></a><span>的值在每次递归调用时都是独立的。</span></p></li><li><p><strong><span>启动递归</span></strong><span>：从第一个集装箱开始，调用</span><code>tryLoad(0, 0)</code><span>。</span></p></li></ol><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615195813748.png" referrerpolicy="no-referrer" alt="image-20240615195813748"><span> 说清楚 然后左右剪枝说清楚 开干 </span></p><figure class='table-figure'><table><thead><tr><th><span>i</span></th><th><span>wi</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>5</span></td></tr><tr><td><span>2</span></td><td><span>2</span></td></tr><tr><td><span>3</span></td><td><span>6</span></td></tr><tr><td><span>4</span></td><td><span>4</span></td></tr><tr><td><span>5</span></td><td><span>3</span></td></tr></tbody></table></figure><p><span>左剪枝：只考虑totalWeight+weight[i]≤W的情况</span></p><p><span>右剪枝：只考虑totalWeight+remainingWeight[i]-weight[i]≥maxv的情况</span></p><p>&nbsp;</p><h2 id='54求解子集和问题tno2n'><span>5.4求解子集和问题T(n)=O(2</span><sup><span>n</span></sup><span>)</span></h2><p><span>给一个大正整数集合和一个数，从大集合中找</span><strong><span>子集</span></strong><span>使其中元素和为这个数</span></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615200320512.png" referrerpolicy="no-referrer" alt="image-20240615200320512"></p><p><span>易，剪枝也易 不如背包问题和装载问题</span></p><p>&nbsp;</p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240614171311086.png" referrerpolicy="no-referrer" alt="image-20240614171311086"></p><p><span>判断子集和问题有没有解 把解的情况算出来即可 如果大于0肯定有解</span></p><p>&nbsp;</p><p><span>n皇后问题 不会很复杂 略看 时间复杂度为O(n</span><sup><span>n</span></sup><span>)</span></p><p><span>图着色 略</span></p><p>&nbsp;</p><h2 id='任务分配--重点--其他算法涉及到过-回溯法子集树时间复杂度on'><span>任务分配  重点？  其他算法涉及到过 回溯法子集树时间复杂度O(n!)</span></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615203309735.png" referrerpolicy="no-referrer" alt="image-20240615203309735"></p><figure class='table-figure'><table><thead><tr><th><strong><span>人员</span></strong></th><th><strong><span>任务*</span></strong><span>*1**</span></th><th><strong><span>任务*</span></strong><span>*2**</span></th><th><strong><span>任务*</span></strong><span>*3**</span></th><th><strong><span>任务*</span></strong><span>*4**</span></th></tr></thead><tbody><tr><td><strong><span>1</span></strong></td><td><strong><span>9</span></strong></td><td><strong><span>2</span></strong></td><td><strong><span>7</span></strong></td><td><strong><span>8</span></strong></td></tr><tr><td><strong><span>2</span></strong></td><td><strong><span>6</span></strong></td><td><strong><span>4</span></strong></td><td><strong><span>3</span></strong></td><td><strong><span>7</span></strong></td></tr><tr><td><strong><span>3</span></strong></td><td><strong><span>5</span></strong></td><td><strong><span>8</span></strong></td><td><strong><span>1</span></strong></td><td><strong><span>8</span></strong></td></tr><tr><td><strong><span>4</span></strong></td><td><strong><span>7</span></strong></td><td><strong><span>6</span></strong></td><td><strong><span>9</span></strong></td><td><strong><span>4</span></strong></td></tr></tbody></table></figure><h3 id='简要思路'><span>简要思路</span></h3><ol start='' ><li><p><strong><span>初始化</span></strong><span>：定义一个n×n的成本矩阵，其中n是任务（或工人）的数量，矩阵中的元素表示完成任务的成本。</span></p></li><li><p><strong><span>选择</span></strong><span>：从第一个任务（或工人）开始，为每个任务选择一个工人（或为每个工人选择一个任务），确保每个任务只被分配给一个工人，且每个工人只被分配一个任务。</span></p></li><li><p><strong><span>约束</span></strong><span>：确保当前的分配不违反约束条件，即每个任务只能分配给一个工人，每个工人只能获得一个任务。</span></p></li><li><p><strong><span>目标</span></strong><span>：计算当前分配方案的总成本，尝试找到成本最低的分配方案。</span></p></li><li><p><strong><span>回溯</span></strong><span>：如果当前分配不是最优的或存在更好的分配方案，则回溯到上一步，尝试不同的分配方式。</span></p></li><li><p><strong><span>终止条件</span></strong><span>：当所有任务都被分配且没有更好的分配方案时，算法结束。</span></p></li></ol><h3 id='如何画出子集图'><span>如何画出子集图</span></h3><p><span>子集图是一种树状结构，用于表示所有可能的分配方案。每个节点代表一个分配决策，树的每一层代表一个任务的分配。根节点是空的，表示还没有任务被分配。每个节点有n个子节点，代表将当前任务分配给n个不同工人的选择。</span></p><ol start='' ><li><p><strong><span>根节点</span></strong><span>：开始时，根节点为空，表示没有任务被分配。</span></p></li><li><p><strong><span>第一层节点</span></strong><span>：从根节点出发，生成n个子节点，每个子节点代表第一个任务分配给不同工人的情况。</span></p></li><li><p><strong><span>后续层节点</span></strong><span>：对于每个已有的节点，再生成n个子节点，每个子节点代表在前一个任务的分配基础上，将下一个任务分配给不同工人的情况。</span></p></li><li><p><strong><span>叶节点</span></strong><span>：当所有任务都被分配后，到达叶节点。叶节点代表一种完整的任务分配方案。</span></p></li><li><p><strong><span>剪枝</span></strong><span>：在生成子集图的过程中，如果某个分配方案的当前总成本已经超过已知的最低成本，则可以停止进一步扩展该节点，这称为剪枝，可以大大减少搜索空间。</span></p></li></ol><p><span>通过这种方式，子集图展示了所有可能的任务分配方案，回溯法通过遍历这棵树来寻找成本最低的分配方案。</span></p><ol start='' ><li><p><strong><span>维护当前最低成本</span></strong><span>：在搜索过程中，维护一个全局变量来记录当前找到的最低成本分配方案的总成本。</span></p></li><li><p><strong><span>计算部分成本</span></strong><span>：对于每个部分分配方案（即当前已经分配了一部分任务的方案），计算其总成本。</span></p></li><li><p><strong><span>比较成本</span></strong><span>：在每次尝试分配任务之前，估算这个部分方案完成所有任务后可能达到的最低总成本。如果这个估算成本已经超过了当前记录的最低成本，则没有继续探索这个分支的必要，因为即使这个分支的剩余任务都以最低可能成本完成，其总成本也不可能低于当前已知的最低成本。</span></p></li><li><p><strong><span>剪枝操作</span></strong><span>：基于上述比较，如果当前分支的成本超过了已知的最低成本，则放弃进一步探索这个分支，回溯到上一个决策点尝试其他可能的分配</span></p></li></ol><p><span>这个剪枝方案没有给出  有些复杂，记录有最优成本 但是不算完怎么知道总成本，</span></p><h2 id='活动安排问题-排列树-类似于后面动态规划的安排预约-这里目标是活动数最多'><strong><span>活动安排问题</span></strong><span> 排列树？ 类似于后面动态规划的安排预约 ，这里目标是活动数最多</span></h2><p><span>这个问题最好用贪心来做 nlogn</span></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615203552864.png" referrerpolicy="no-referrer" alt="image-20240615203552864"></p><figure class='table-figure'><table><thead><tr><th><strong><span>活动编号</span></strong><span>i</span></th><th><strong><span>1</span></strong></th><th><strong><span>2</span></strong></th><th><strong><span>3</span></strong></th><th><strong><span>4</span></strong></th></tr></thead><tbody><tr><td><strong><span>开始时间</span></strong><span>bi</span></td><td><strong><span>1</span></strong></td><td><strong><span>2</span></strong></td><td><strong><span>4</span></strong></td><td><strong><span>6</span></strong></td></tr><tr><td><strong><span>结束时间</span></strong><span>ei</span></td><td><strong><span>3</span></strong></td><td><strong><span>5</span></strong></td><td><strong><span>8</span></strong></td><td><strong><span>10</span></strong></td></tr></tbody></table></figure><p><span>可以用子集树思想，每一步包含剪枝条件 感觉还不错</span></p><p><span>记录sum=活动数,endTime=上个活动结束时间 最后返回活动数最多的方案</span></p><p><span>我这么搞子集树O(2</span><sup><span>n</span></sup><span>)</span></p><p>&nbsp;</p><p><span>排列树解法却要O(n!)</span></p><p>&nbsp;</p><h2 id='流水作业调度-重点-排列树--bound条件剪枝'><strong><span>流水作业调度</span></strong><span> 重点 排列树  bound条件剪枝？</span></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615203532143.png" referrerpolicy="no-referrer" alt="image-20240615203532143"></p><figure class='table-figure'><table><thead><tr><th><strong><span>作业编号</span></strong></th><th><strong><span>1</span></strong></th><th><strong><span>2</span></strong></th><th><strong><span>3</span></strong></th><th><strong><span>4</span></strong></th></tr></thead><tbody><tr><td><strong><span>M</span></strong><span>1时间a</span></td><td><strong><span>5</span></strong></td><td><strong><span>12</span></strong></td><td><strong><span>4</span></strong></td><td><strong><span>8</span></strong></td></tr><tr><td><strong><span>M</span></strong><span>2时间b</span></td><td><strong><span>6</span></strong></td><td><strong><span>2</span></strong></td><td><strong><span>14</span></strong></td><td><strong><span>7</span></strong></td></tr></tbody></table></figure><p><span>用排列树那么时间复杂度就是O(n!)</span></p><p><span>对于有两个机器（机器1和机器2）和四项作业（记为A、B、C、D）的流水作业调度问题，其中每个作业必须先在机器1上处理，然后在机器2上处理，我们可以通过以下步骤一步一步画出排列树：</span></p><h3 id='步骤1初始化根节点'><span>步骤1：初始化根节点</span></h3><ul><li><p><strong><span>根节点</span></strong><span>：表示调度开始，还没有任何作业被安排。</span></p></li></ul><h3 id='步骤2第一层---安排机器1的作业顺序'><span>步骤2：第一层 - 安排机器1的作业顺序</span></h3><ul><li><p><span>在第一层，我们为机器1安排作业。由于有四项作业，这一层将有4个分支，每个分支代表一项作业作为第一个在机器1上处理的作业。</span></p></li><li><p><strong><span>分支</span></strong><span>：A、B、C、D</span></p></li></ul><h3 id='步骤3第二层---继续安排机器1的作业顺序'><span>步骤3：第二层 - 继续安排机器1的作业顺序</span></h3><ul><li><p><span>对于每个第一层的节点（比如选择了A），我们为剩下的作业（B、C、D）安排在机器1上的顺序。这意味着每个第一层的节点将分出3个新的分支。</span></p></li><li><p><strong><span>分支示例</span></strong><span>（如果第一层选择了A）：B、C、D</span></p></li></ul><h3 id='步骤4第三层---继续安排机器1的作业顺序'><span>步骤4：第三层 - 继续安排机器1的作业顺序</span></h3><ul><li><p><span>对于每个第二层的节点，我们为剩下的两项作业安排在机器1上的顺序。这意味着每个第二层的节点将分出2个新的分支。</span></p></li><li><p><strong><span>分支示例</span></strong><span>（如果前两层选择了A-&gt;B）：C、D</span></p></li></ul><h3 id='步骤5第四层---确定机器1的最后作业'><span>步骤5：第四层 - 确定机器1的最后作业</span></h3><ul><li><p><span>对于每个第三层的节点，只剩下一项作业未被安排，这一层将确定最后一项作业在机器1上的位置。</span></p></li><li><p><strong><span>分支示例</span></strong><span>（如果前三层选择了A-&gt;B-&gt;C）：D</span></p></li></ul><h3 id='步骤6机器2的作业顺序'><span>步骤6：机器2的作业顺序</span></h3><ul><li><p><span>由于每个作业必须先在机器1上处理再在机器2上处理，机器2的作业顺序将与机器1相同。因此，一旦机器1的作业顺序确定，机器2的作业顺序也随之确定。</span></p></li></ul><h3 id='完成排列树'><span>完成排列树</span></h3><ul><li><p><span>通过上述步骤，我们可以得到一个完整的排列树，其中每个叶节点代表一种可能的作业调度方案。对于四项作业，总共有 (4!)（即24）种不同的排列方式。</span></p></li></ul><p><span>剪枝有些离谱</span></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615211321460.png" referrerpolicy="no-referrer" alt="image-20240615211321460"></p><p><span>不容易 略 O（n!）</span></p><h1 id='6分支限界法-基于递归思想'><span>6、分支限界法-基于递归思想</span></h1><p><span>一般来说分支限界法跟回溯法的区别是，回溯法倾向于求解所有可能，分支限界倾向于求解最优解；</span></p><p><span>另外回溯法是基于DFS，而分支限界法更类似BFS</span></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615211832516.png" referrerpolicy="no-referrer" alt="image-20240615211832516"></p><p><span>带比较性的要关注一下</span></p><p><span>限界函数要能写  之前是剪枝要能写写</span></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615212439963.png" alt="image-20240615212439963" /></p><h2 id='62-01背包'><strong><span>6.2</span></strong><span> 0/1背包</span></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615214822329.png" referrerpolicy="no-referrer" alt="image-20240615214822329"></p><figure class='table-figure'><table><thead><tr><th style='text-align:left;' ><span>No</span></th><th><span>Wi</span></th><th><span>Vi</span></th><th><span>V/W</span></th></tr></thead><tbody><tr><td style='text-align:left;' ><span>1</span></td><td><span>16</span></td><td><span>45</span></td><td><span>45/16</span></td></tr><tr><td style='text-align:left;' ><span>2</span></td><td><span>15</span></td><td><span>25</span></td><td><span>5/3</span></td></tr><tr><td style='text-align:left;' ><span>3</span></td><td><span>15</span></td><td><span>25</span></td><td><span>5/3</span></td></tr></tbody></table></figure><h3 id='621队列式分支限界法-2n'><span>6.2.1队列式分支限界法 2</span><sup><span>n</span></sup></h3><p><span>先搞清楚一件事，队列式分支限界法来求0/1背包，期待最优解 BFS思想</span></p><p><span>回溯法DFS 先得到可能解再来判断最优，所以当要求是不超过质量，右剪枝的bound函数就跟队列式分支限界很像了</span></p><p><img src="C:\Users\yanyifan\AppData\Roaming\Typora\typora-user-images\image-20240615212942031.png" referrerpolicy="no-referrer" alt="image-20240615212941895"></p><p>&nbsp;</p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240615213006746.png" referrerpolicy="no-referrer" alt="image-20240615213006746"></p><figure class='table-figure'><table><thead><tr><th><span>i</span></th><th><span>No</span></th><th><span>wi</span></th><th><span>vi</span></th><th><span>vi/wi</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>1</span></td><td><span>16</span></td><td><span>45</span></td><td><span>分数表示</span></td></tr><tr><td><span>2</span></td><td><span>2</span></td><td><span>15</span></td><td><span>25</span></td><td>&nbsp;</td></tr><tr><td><span>3</span></td><td><span>3</span></td><td><span>15</span></td><td><span>25</span></td><td>&nbsp;</td></tr></tbody></table></figure><p><span>W=30</span>
+<span>q,q1表示选择物品,q2表示不选择物品</span></p><p><span>totalWeight totalValue</span></p><p><span>w[i] </span></p><p><span>左剪枝条件</span></p><p><span>右剪枝条件 q2.upperBound≥maxv 这个maxv得到的过程是BFS 对比回溯法maxv得到过程是DFS</span></p><h3 id='622优先队列分支限界法2n'><span>6.2.2优先队列分支限界法2</span><sup><span>n</span></sup></h3><p><span>出队和遍历顺序按价值优先  ，也就是说尽可能先装点，把maxv搞大，方便后续剪枝</span></p><h2 id='63求解图的单源最短路径'><span>6.3求解图的单源最短路径</span></h2><p><span>单源最短路 Dijkstra是贪心 Bellman-Ford是动态规划</span></p><p>&nbsp;</p><h3 id='631队列式分支限界法时间复杂度依赖于图的样子-不确定'><span>6.3.1</span><strong><span>队列式分支限界法</span></strong><span>时间复杂度依赖于图的样子 不确定</span></h3><p>&nbsp;</p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240616164739407.png" referrerpolicy="no-referrer" alt="image-20240616164739407"></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240616165106786.png" referrerpolicy="no-referrer" alt="image-20240616165106786"></p><h3 id='632-优先队列式分支限界法'><span>6.3.2 </span><strong><span>优先队列式分支限界法</span></strong></h3><p><span>注意优先队列与队列的不同！</span></p><p><span>length小的先出队，同样无法确定时间复杂度和剪枝情况</span></p><p><span>这种就很类似贪心了 </span></p><p><strong><span>模拟优先队列式分支限界法求解图单源最短路的过程跟Dijkstra算法几乎没什么两样</span></strong></p><p>&nbsp;</p><p><span>想想dijkstra</span></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240616171718450.png" referrerpolicy="no-referrer" alt="image-20240616171718450"></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='64求解任务分配问题'><span>6.4求解任务分配问题</span></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240616172054872.png" referrerpolicy="no-referrer" alt="image-20240616172054872"></p><p><span>优先队列式求解</span></p><p><span>设置上下界函数？upperBound 和lowerBound</span></p><figure class='table-figure'><table><thead><tr><th><strong><span>人员</span></strong></th><th><strong><span>任务*</span></strong><span>*1**</span></th><th><strong><span>任务*</span></strong><span>*2**</span></th><th><strong><span>任务*</span></strong><span>*3**</span></th><th><strong><span>任务*</span></strong><span>*4**</span></th></tr></thead><tbody><tr><td><strong><span>1</span></strong></td><td><strong><span>9</span></strong></td><td><strong><span>2</span></strong></td><td><strong><span>7</span></strong></td><td><strong><span>8</span></strong></td></tr><tr><td><strong><span>2</span></strong></td><td><strong><span>6</span></strong></td><td><strong><span>4</span></strong></td><td><strong><span>3</span></strong></td><td><strong><span>7</span></strong></td></tr><tr><td><strong><span>3</span></strong></td><td><strong><span>5</span></strong></td><td><strong><span>8</span></strong></td><td><strong><span>1</span></strong></td><td><strong><span>8</span></strong></td></tr><tr><td><strong><span>4</span></strong></td><td><strong><span>7</span></strong></td><td><strong><span>6</span></strong></td><td><strong><span>9</span></strong></td><td><strong><span>4</span></strong></td></tr></tbody></table></figure><h3 id='1-问题定义'><span>1. 问题定义</span></h3><p><span>任务分配问题（Assignment Problem）通常定义为：给定一个任务成本矩阵，其中矩阵的第 (i) 行第 (j) 列的元素表示第 (i) 个人完成第 (j) 个任务的成本，目标是将所有任务分配给所有人，使得总成本最小，且每个人只能分配到一个任务，每个任务只能被分配给一个人。</span></p><p><span>优先队列式分支限界 priorityQueue</span></p><p><span>剪枝：由于目标是求最小代价，则规定下界函数lowerBound(可能的下界，硬迭代来找) 仅拓展lowerBound≤mincost的孩子节点</span></p><p><span>x={0,0,0,0}开始，第i个任务分别由第1、2、3、4个人去干 然后画出树即可</span></p><p><span>剪枝的关键是，让没被分配的先跳出限制条件，自己寻找自己最擅长的，即使冲突，这样得到一个夸张的下界，如果这个下界还比mincost大，那肯定说不过去，就舍去</span></p><blockquote><p><span>#</span><span>include </span><iostream></p><p><span>#</span><span>include </span><vector></p><p><span>#</span><span>include </span><queue></p><p><span>#</span><span>include </span><climits></p><p><span>using namespace </span><strong><span>std</span></strong><span>;</span></p><p><span>struct </span><strong><span>Node</span></strong></p><p><span>{</span></p><p><span>int level;       </span><em><span>//</span></em><span> </span><em><span>当前处理到的行（人）</span></em></p><p><span>int cost;        </span><em><span>//</span></em><span> </span><em><span>到目前为止的成本</span></em></p><p><strong><span>vector</span></strong><bool><span> assigned; </span><em><span>//</span></em><span> </span><em><span>标记任务是否已被分配</span></em></p><p><span>};</span></p><p><em><span>//</span></em><span> </span><em><span>自定义优先队列比较函数，优先级高的是成本低的</span></em></p><p><span>auto cmp = </span><a href='const **Node** &amp;left, const **Node** &amp;right'></a></p><p><span>{ return left.cost &gt; right.cost; };</span></p><p><strong><span>priority_queue</span></strong><span>&lt;</span><strong><span>Node</span></strong><span>, </span><strong><span>vector</span></strong><span>&lt;</span><strong><span>Node</span></strong><span>&gt;, decltype(cmp)&gt; </span><strong><span>pq</span></strong><span>(</span><strong><span>cmp</span></strong><span>);</span></p><p><em><span>//</span></em><span> </span><em><span>修改后的lowerBound函数，增加输出细节</span></em></p><p><span>int </span><strong><span>lowerBound</span></strong><span>(const </span><strong><span>Node</span></strong><span> &amp;node, const </span><strong><span>vector</span></strong><span>&lt;</span><strong><span>vector</span></strong><int><span>&gt; &amp;costMatrix)</span></p><p><span>{</span></p><p><span>int lb = node.cost;</span></p><p><span>int n = costMatrix.</span><strong><span>size</span></strong><span>();</span></p><p><span>cout </span><strong><span>&lt;&lt;</span></strong><span> &quot;计算下界，当前成本: &quot; </span><strong><span>&lt;&lt;</span></strong><span> node.cost </span><strong><span>&lt;&lt;</span></strong><span> &quot;, 未分配任务的最小成本: &quot;;</span></p><p><span>for (int i = node.level + 1; i &lt; n; ++i)</span></p><p><span>{</span></p><p><span>    int minCost = </span><strong><span>INT_MAX</span></strong><span>;</span></p><p><span>    for (int j = 0; j &lt; n; ++j)</span></p><p><span>    {</span></p><p><span>      if (!node.assigned</span><strong><span>[</span></strong><span>j</span><strong><span>]</span></strong><span> &amp;&amp; costMatrix</span><strong><span>[</span></strong><span>i</span><strong><span>]*</span></strong><span>*[</span><strong><span>j</span></strong><span>]** &lt; minCost)</span></p><p><span>      {</span></p><p><span>        minCost = costMatrix</span><strong><span>[</span></strong><span>i</span><strong><span>]*</span></strong><span>*[</span><strong><span>j</span></strong><span>]**;</span></p><p><span>      }</span></p><p><span>    }</span></p><p><span>    lb += minCost;</span></p><p><span>    cout </span><strong><span>&lt;&lt;</span></strong><span> minCost </span><strong><span>&lt;&lt;</span></strong><span> &quot; &quot;;</span></p><p><span>}</span></p><p><span>cout </span><strong><span>&lt;&lt;</span></strong><span> &quot;, 总下界: &quot; </span><strong><span>&lt;&lt;</span></strong><span> lb </span><strong><span>&lt;&lt;</span></strong><span> </span><strong><span>endl</span></strong><span>;</span></p><p><span>return lb;</span></p><p><span>}</span></p><p><em><span>//</span></em><span> </span><em><span>分支限界法求解任务分配问题</span></em></p><p><span>int </span><strong><span>solveAssignmentProblem</span></strong><span>(const </span><strong><span>vector</span></strong><span>&lt;</span><strong><span>vector</span></strong><int><span>&gt; &amp;costMatrix)</span></p><p><span>{</span></p><p><span>int n = costMatrix.</span><strong><span>size</span></strong><span>();</span></p><p><strong><span>Node</span></strong><span> root = {-1, 0, </span><strong><span>vector</span></strong><bool><span>(n, false)};</span></p><p><span>pq.</span><strong><span>push</span></strong><span>(root);</span></p><p><span>int minCost = </span><strong><span>INT_MAX</span></strong><span>;</span></p><p><span>while (!pq.</span><strong><span>empty</span></strong><span>())</span></p><p><span>{</span></p><p><span>    </span><strong><span>Node</span></strong><span> node = pq.</span><strong><span>top</span></strong><span>();</span></p><p><span>    pq.</span><strong><span>pop</span></strong><span>();</span></p><p><span>    if (node.level == n - 1)</span></p><p><span>    {</span></p><p><span>      minCost = </span><strong><span>min</span></strong><span>(minCost, node.cost);</span></p><p><span>      continue;</span></p><p><span>    }</span></p><p><span>    </span><em><span>//</span></em><span> </span><em><span>扩展当前节点</span></em></p><p><span>    for (int j = 0; j &lt; n; ++j)</span></p><p><span>    {</span></p><p><span>      if (!node.assigned</span><strong><span>[</span></strong><span>j</span><strong><span>]</span></strong><span>)</span></p><p><span>      {</span></p><p><span>        </span><strong><span>Node</span></strong><span> child = node;</span></p><p><span>        child.level++;</span></p><p><span>        child.assigned</span><strong><span>[</span></strong><span>j</span><strong><span>]</span></strong><span> </span><strong><span>=</span></strong><span> true;</span></p><p><span>        child.cost += costMatrix</span><strong><span>[</span></strong><span>child.level</span><strong><span>]*</span></strong><span>*[</span><strong><span>j</span></strong><span>]**;</span></p><p><span>        int lb = </span><strong><span>lowerBound</span></strong><span>(child, costMatrix);</span></p><p><span>        if (lb &lt; minCost)</span></p><p><span>        {</span></p><p><span>          pq.</span><strong><span>push</span></strong><span>(child);</span></p><p><span>          cout </span><strong><span>&lt;&lt;</span></strong><span> &quot;扩展节点，成本: &quot; </span><strong><span>&lt;&lt;</span></strong><span> child.cost </span><strong><span>&lt;&lt;</span></strong><span> &quot;, 下界: &quot; </span><strong><span>&lt;&lt;</span></strong><span> lb </span><strong><span>&lt;&lt;</span></strong><span> </span><strong><span>endl</span></strong><span>;</span></p><p><span>        }</span></p><p><span>      }</span></p><p><span>    }</span></p><p><span>}</span></p><p><span>return minCost;</span></p><p><span>}</span></p><p><span>int </span><strong><span>main</span></strong><span>()</span></p><p><span>{</span></p><p><strong><span>vector</span></strong><span>&lt;</span><strong><span>vector</span></strong><int><span>&gt; costMatrix = {</span></p><p><span>    {9, 2, 7, 8},</span></p><p><span>    {6, 4, 3, 7},</span></p><p><span>    {5, 8, 1, 8},</span></p><p><span>    {7, 6, 9, 4}};</span></p><p><span>int result = </span><strong><span>solveAssignmentProblem</span></strong><span>(costMatrix);</span></p><p><span>cout </span><strong><span>&lt;&lt;</span></strong><span> &quot;最小总成本: &quot; </span><strong><span>&lt;&lt;</span></strong><span> result </span><strong><span>&lt;&lt;</span></strong><span> </span><strong><span>endl</span></strong><span>;</span></p><p><span>return 0;</span></p><p><span>}</span></p></blockquote><p>&nbsp;</p><p><span>分支限界法有趣的一点：剪枝函数设置复杂可以保证最严格的剪枝，但是计算量会增大，如果为了减少剪枝函数计算量，那么其就不会那么严格，就会导致一些无法被剪枝到 ，如何能找到一个均衡点？ 有没有最优算法能够找到最优平衡点？</span></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240617105259348.png" referrerpolicy="no-referrer" alt="image-20240617105259348"></p><h2 id='65流水作业调度'><span>6.5流水作业调度</span></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240616202906752.png" referrerpolicy="no-referrer" alt="image-20240616202906752"></p><p>&nbsp;</p><figure class='table-figure'><table><thead><tr><th><strong><span>作业编号</span></strong></th><th><strong><span>1</span></strong></th><th><strong><span>2</span></strong></th><th><strong><span>3</span></strong></th><th><strong><span>4</span></strong></th></tr></thead><tbody><tr><td><strong><span>M*</span></strong><span>*1</span><strong></strong><span>时间</span><strong></strong><span>a**</span></td><td><strong><span>5</span></strong></td><td><strong><span>12</span></strong></td><td><strong><span>4</span></strong></td><td><strong><span>8</span></strong></td></tr><tr><td><strong><span>M*</span></strong><span>*2</span><strong></strong><span>时间</span><strong></strong><span>b**</span></td><td><strong><span>6</span></strong></td><td><strong><span>2</span></strong></td><td><strong><span>14</span></strong></td><td><strong><span>7</span></strong></td></tr></tbody></table></figure><p><span>其中 a[j]显然是在M1上工作所需时间 b[j]是M2上工作所需时间</span></p><p><span>定义f1是M1执行完第i步的总时间 f2表示M2执行完第i步的总时间</span></p><p><span>f1+=M1[j]</span></p><p><span>f2=M2[j]+max{f1,f2}</span></p><p><span>由于要最少时间，故定义下界函数lowerBound </span></p><p><span>仅考虑lowerBound≤maxcost的节点</span></p><p><span>这个算法的下界是通过以下步骤增加的：</span></p><ol start='' ><li><p><strong><span>初始下界</span></strong><span>：从当前已调度的作业序列计算的总时间。具体来说，这是通过 </span><code>calculateTotalTime</code><span> 函数计算的。</span></p></li><li><p><strong><span>未调度作业的最小处理时间</span></strong><span>：对于每个未调度的作业，取其在M1或M2阶段的最小处理时间，并将这些时间累加到初始下界上。</span></p></li><li><blockquote><p><span>#include </span><iostream>
+<span>#include </span><vector>
+<span>#include </span><queue>
+<span>#include </span><algorithm>
+<span>#include </span><numeric>
+<span>#include </span><limits></p><p><span>using namespace std;</span></p><p><span>struct Job</span>
+<span>{</span>
+<span> int id;</span>
+<span> int m1Time;</span>
+<span> int m2Time;</span>
+<span>};</span></p><p><span>struct State</span>
+<span>{</span>
+<span> vector</span><int><span> jobSequence; // 存储作业ID</span>
+<span> int totalTime;           // 当前完成时间</span>
+<span> int lowerBound;          // 当前状态的下界</span></p><p><span>    bool operator&lt;(const State &amp;other) const</span>
+<span>​    {</span>
+<span>​        return lowerBound &gt; other.lowerBound;</span>
+<span>​    }</span>
+<span>};</span></p><p><span>// 更新calculateTotalTime函数以考虑M1和M2阶段</span>
+<span>int calculateTotalTime(const vector</span><int><span> &amp;jobSequence, const vector</span><Job><span> &amp;jobs)</span>
+<span>{</span>
+<span> int m1Time = 0, m2Time = 0;</span>
+<span> for (int id : jobSequence)</span>
+<span> {</span>
+<span>     const Job &amp;job = jobs[id - 1];             // 假设作业ID从1开始</span>
+<span>     m1Time += job.m1Time;                      // M1阶段累加</span>
+<span>     m2Time = max(m2Time, m1Time) + job.m2Time; // M2阶段在M1完成后开始</span>
+<span> }</span>
+<span> return m2Time; // 返回总完成时间</span>
+<span>}</span></p><p><span>// 计算当前状态的下界</span>
+<span>int calculateLowerBound(const vector</span><int><span> &amp;jobSequence, const vector</span><Job><span> &amp;jobs)</span>
+<span>{</span>
+<span> vector</span><int><span> remainingJobs;</span>
+<span> for (const Job &amp;job : jobs)</span>
+<span> {</span>
+<span>     if (find(jobSequence.begin(), jobSequence.end(), job.id) == jobSequence.end())</span>
+<span>     {</span>
+<span>         remainingJobs.push_back(job.id);</span>
+<span>     }</span>
+<span> }</span></p><p><span>    // 初始下界是当前完成时间</span>
+<span>​    int lowerBound = calculateTotalTime(jobSequence, jobs);</span></p><p><span>    // 累加所有未调度作业的最短处理时间（启发式下界）</span>
+<span>​    for (int id : remainingJobs)</span>
+<span>​    {</span>
+<span>​        const Job &amp;job = jobs[id - 1];</span>
+<span>​        lowerBound += min(job.m1Time, job.m2Time);</span>
+<span>​    }</span></p><p><span>    // 调试信息</span>
+<span>​    cout &lt;&lt; &quot;当前序列: &quot;;</span>
+<span>​    for (int id : jobSequence)</span>
+<span>​    {</span>
+<span>​        cout &lt;&lt; id &lt;&lt; &quot; &quot;;</span>
+<span>​    }</span>
+<span>​    cout &lt;&lt; &quot; | 初始下界: &quot; &lt;&lt; calculateTotalTime(jobSequence, jobs) &lt;&lt; &quot; | 增加的时间: &quot;;</span>
+<span>​    for (int id : remainingJobs)</span>
+<span>​    {</span>
+<span>​        cout &lt;&lt; min(jobs[id - 1].m1Time, jobs[id - 1].m2Time) &lt;&lt; &quot; &quot;;</span>
+<span>​    }</span>
+<span>​    cout &lt;&lt; &quot; | 总下界: &quot; &lt;&lt; lowerBound &lt;&lt; endl;</span></p><p><span>    return lowerBound;</span>
+<span>}</span></p><p><span>int main()</span>
+<span>{</span>
+<span> vector</span><Job><span> jobs = {</span>
+<span>     {1, 5, 6},  // 作业1</span>
+<span>     {2, 12, 2}, // 作业2</span>
+<span>     {3, 4, 14}, // 作业3</span>
+<span>     {4, 8, 7}   // 作业4</span>
+<span> };</span>
+<span> priority_queue</span><State><span> states;</span>
+<span> states.push({{}, 0, 0});</span></p><p><span>    int bestTime = numeric_limits</span><int><span>::max();</span></p><p><span>    while (!states.empty())</span>
+<span>​    {</span>
+<span>​        State current = states.top();</span>
+<span>​        states.pop();</span></p><p><span>        if (current.jobSequence.size() == jobs.size())</span>
+<span>​        {</span>
+<span>​            bestTime = min(bestTime, current.totalTime);</span>
+<span>​            cout &lt;&lt; &quot;找到解，总时间: &quot; &lt;&lt; current.totalTime &lt;&lt; endl;</span>
+<span>​            break;</span>
+<span>​        }</span></p><p><span>        for (const Job &amp;job : jobs)</span>
+<span>​        {</span>
+<span>​            if (find(current.jobSequence.begin(), current.jobSequence.end(), job.id) == current.jobSequence.end())</span>
+<span>​            {</span>
+<span>​                vector</span><int><span> newSequence = current.jobSequence;</span>
+<span>​                newSequence.push_back(job.id);</span>
+<span>​                int newTotalTime = calculateTotalTime(newSequence, jobs);</span>
+<span>​                int newLowerBound = calculateLowerBound(newSequence, jobs);</span></p><p><span>                if (newLowerBound &lt; bestTime)</span>
+<span>​                {</span>
+<span>​                    cout &lt;&lt; &quot;当前节点的下界: &quot; &lt;&lt; newLowerBound &lt;&lt; endl;</span>
+<span>​                    states.push({newSequence, newTotalTime, newLowerBound});</span>
+<span>​                }</span>
+<span>​            }</span>
+<span>​        }</span>
+<span>​    }</span></p><p><span>    cout &lt;&lt; &quot;最佳总时间: &quot; &lt;&lt; bestTime &lt;&lt; endl;</span></p><p><span>    return 0;</span>
+<span>}</span></p></blockquote></li></ol><p><span>我感觉是很合理的 不然算不了</span></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240617111145620.png" referrerpolicy="no-referrer" alt="image-20240617111145620"></p><h1 id='7贪心法'><span>7、贪心法</span></h1><h2 id='哪些能最优'><span>哪些能最优？</span></h2><ol><li><p><span>活动安排 按结束时间排序</span></p></li><li><p><span>分数背包 按单位重量价值排序</span></p></li><li><p><span>最优装载 按重量升序</span></p></li><li><p><span>单机调度任务 类似于最优装载 最短处理时间优先</span></p></li><li><p><span>哈夫曼编码 贪心策略：从权值最小的节点开始组合生成一个新节点，每次选择权值最小的两个节点</span></p></li><li><p><span>流水线调度问题johnson 贪心策略：先分组， M1&lt;=M2组A  M1&gt;M2组B 组A升序 组B降序 排序好后按序运行即可</span></p></li></ol><p>&nbsp;</p><p><span>用反证法证明最优子结构</span></p><p><span>假设存在一个最优解S&#39;，它包含的第一个活动不是所有可选活动中结束时间最早的活动。设S是按照贪心策略选择的活动集合，其中第一个活动是所有可选活动中结束时间最早的。</span></p><p><span>如果S&#39;是最优解，那么通过替换其第一个活动为结束时间最早的活动（如果它们不同的话），我们得到的新解S&#39;&#39;不会比S&#39;差。这与假设S&#39;是唯一最优解矛盾，因为我们找到了另一个至少和S&#39;一样好的解S&#39;&#39;。进一步，由于贪心选择的解S在每一步都是局部最优的，且不会比任何其他解差，因此S也是全局最优解。</span></p><h2 id='不一定最优'><span>不一定最优</span></h2><p><span>多机调度 最长过程 用最长处理时间优先可能会出问题</span></p><p>&nbsp;</p><h2 id='72活动安排---牵涉证明1-反证法-nlogn'><span>7.2活动安排---牵涉证明1 反证法 nlogn </span></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240616213846034.png" referrerpolicy="no-referrer" alt="image-20240616213846034"></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240616214530709.png" referrerpolicy="no-referrer" alt="image-20240616214530709"></p><p><span>贪心法解决活动安排问题的基本思想是按照活动结束时间的早晚来选择活动，具体步骤如下：</span></p><ol start='' ><li><p><span>将所有活动按照结束时间从早到晚排序。</span></p></li><li><p><span>选择结束时间最早的活动，然后排除与该活动时间冲突的所有活动。</span></p></li><li><p><span>重复步骤2，直到没有剩余活动为止。</span></p></li></ol><p>&nbsp;</p><blockquote><p><span>使用反证法证明贪心法解决活动选择问题能得到全局最优解，可以按照以下步骤进行：</span></p><h3 id='假设'><span>假设</span></h3><p><span>假设存在一个最优解S&#39;，它包含的第一个活动不是所有可选活动中结束时间最早的活动。设S是按照贪心策略选择的活动集合，其中第一个活动是所有可选活动中结束时间最早的。</span></p><h3 id='步骤'><span>步骤</span></h3><ol start='' ><li><p><strong><span>选择第一个活动</span></strong><span>：设活动a是所有可选活动中结束时间最早的，而活动b是最优解S&#39;中结束时间最早的活动。根据假设，活动b的结束时间不早于活动a的结束时间。</span></p></li><li><p><strong><span>构造新的解</span></strong><span>：如果活动b不是结束时间最早的活动，我们可以用活动a替换S&#39;中的活动b，构造一个新的解S&#39;&#39;。由于活动a的结束时间不晚于活动b，因此所有与活动b兼容的活动也与活动a兼容。这意味着S&#39;&#39;至少和S&#39;一样好。</span></p></li><li><p><strong><span>迭代</span></strong><span>：对于剩下的活动，我们继续应用贪心策略，选择结束时间最早的活动。由于每次选择都不会使解变差，这保证了最终得到的解S是最优的。</span></p></li></ol><h3 id='反证'><span>反证</span></h3><ul><li><p><strong><span>如果S&#39;是最优解，那么通过替换其第一个活动为结束时间最早的活动（如果它们不同的话），我们得到的新解S&#39;&#39;不会比S&#39;差。这与假设S&#39;是唯一最优解矛盾，因为我们找到了另一个至少和S&#39;一样好的解S&#39;&#39;。</span></strong></p></li><li><p><strong><span>进一步，由于贪心选择的解S在每一步都是局部最优的，且不会比任何其他解差，因此S也是全局最优解。</span></strong></p></li></ul><p>&nbsp;</p><h3 id='结论'><span>结论</span></h3><p><span>通过反证法，我们证明了按照结束时间最早选择活动的贪心策略能够得到活动选择问题的全局最优解。这意味着不存在比按照贪心策略得到的解更好的解，从而证明了贪心法的有效性</span></p></blockquote><p>&nbsp;</p><p><span>贪心策略：</span></p><ol start='' ><li><p><span>将所有活动按结束时间递增排序</span></p></li><li><p><span>设S为按照贪心策略选择的活动集合，将结束时间最靠前的活动加入S，然后排除所有与之冲突的活动。</span></p></li><li><p><span>重复进行步骤2，最后得到的集合S为最优解</span></p></li></ol><p><span>反证法证明局部最优解也为全局最优解（最优子结构）</span></p><p><span>假设全局最优解S&#39;的第一个活动不是结束时间最早的。用结束时间更早的活动替换S&#39;中的第一个活动得到S&#39;&#39;，S&#39;&#39;不会比S&#39;差，与S&#39;是最优解矛盾。因此，按贪心策略得到的解S每步都是局部最优，故S也是全局最优解。</span></p><h2 id='73背包---牵涉证明nlogn-排序占大头'><span>7.3背包---牵涉证明nlogn 排序占大头</span></h2><p><span>分数背包问题的贪心求解策略基于每单位重量价值的最大化原则。具体步骤如下：</span></p><h3 id='贪心策略'><span>贪心策略</span></h3><ol start='' ><li><p><strong><span>计算每个物品的单位重量价值</span></strong><span>：对每个物品，计算其价值与重量的比值，即(v_i / w_i)。</span></p></li><li><p><strong><span>排序</span></strong><span>：根据每个物品的单位重量价值，将所有物品降序排序。</span></p></li><li><p><strong><span>选择</span></strong><span>：从单位重量价值最高的物品开始，尽可能多地选择每个物品。如果当前物品无法完全装入背包，则选择其可以装入的最大部分，然后停止选择。</span></p></li></ol><h3 id='反证局部最优解是全局最优解'><span>反证局部最优解是全局最优解</span></h3><p><span>假设存在一个最优解，其中包含的第一个物品不是单位重量价值最高的物品。设该最优解为S&#39;，而按照贪心策略选择的解为S。</span></p><ol start='' ><li><p><strong><span>替换</span></strong><span>：在S&#39;中找到第一个不按照单位重量价值降序选择的物品，假设为物品A。根据贪心策略，存在另一个物品B，其单位重量价值高于A。</span></p></li><li><p><strong><span>构造新解</span></strong><span>：用物品B替换S&#39;中的物品A（如果B的重量超过了A的重量且背包还有空间，只取B的一部分使得总重量等同于A或填满背包）。这样做至少不会降低背包的总价值，因为B的单位价值高于A。</span></p></li><li><p><strong><span>迭代</span></strong><span>：对于S&#39;中接下来的每个选择，重复上述替换过程，直到所有选择都是按照单位重量价值降序的。</span></p></li></ol><h3 id='结论-2'><span>结论</span></h3><p><span>通过上述替换，我们可以得到一个新的解，其价值不低于原来的最优解S&#39;，且完全按照贪心策略选择物品。这意味着贪心策略得到的解至少和任何其他最优解一样好。因此，我们可以反证贪心策略得到的局部最优解实际上是全局最优解。</span></p><h2 id='74最优装载nlogn-涉及排序'><span>7.4最优装载nlogn 涉及排序</span></h2><p><span>最优装载问题（也称为轻舟载重问题）要求在不超过船的最大承重的情况下，尽可能多地装载物品。这里的贪心策略是基于物品重量的最小化原则。</span></p><h3 id='贪心策略-2'><span>贪心策略</span></h3><ol start='' ><li><p><strong><span>排序</span></strong><span>：将所有物品按重量从轻到重排序。</span></p></li><li><p><strong><span>选择</span></strong><span>：依次选择重量最轻的物品装入船中，直到再也无法装下更多的物品为止。</span></p></li></ol><h3 id='反证贪心最优子结构'><span>反证贪心最优子结构</span></h3><p><span>假设存在一个最优解S&#39;，其中包含的第一个物品不是重量最轻的物品。设按照贪心策略选择的解为S。</span></p><ol start='' ><li><p><strong><span>替换</span></strong><span>：在S&#39;中找到第一个不是按照重量从轻到重选择的物品，假设为物品A。根据贪心策略，存在另一个物品B，其重量轻于A。</span></p></li><li><p><strong><span>构造新解</span></strong><span>：用物品B替换S&#39;中的物品A。由于B的重量更轻，替换后的新解至少能装载和S&#39;一样多的物品数量，可能还能装载更多。</span></p></li><li><p><strong><span>迭代</span></strong><span>：对于S&#39;中接下来的每个选择，重复上述替换过程，直到所有选择都是按照重量从轻到重的顺序。</span></p></li></ol><p><span>通过上述替换，我们可以得到一个新的解，其装载的物品数量不少于原来的最优解S&#39;，且完全按照贪心策略选择物品。这意味着贪心策略得到的解至少和任何其他最优解一样好。因此，我们可以反证贪心策略得到的局部最优解实际上是全局最优解，展示了贪心选择的最优子结构特性。</span></p><h2 id='75田忌赛马xx不看-nlogn'><span>7.5田忌赛马xx不看 nlogn</span></h2><p>&nbsp;</p><p><span>有点意思但比较复杂</span></p><p>&nbsp;</p><h2 id='76多机调度-nlogn-无法确保用贪心一定能得到全局最优'><span>7.6多机调度 nlogn 无法确保用贪心一定能得到全局最优</span></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240617014304007.png" referrerpolicy="no-referrer" alt="image-20240617014304007"></p><p><span>此题贪心策略是</span><strong><span>最长处理时间优先</span></strong><span>（Longest Processing Time First, LPTF）。这种策略尤其适用于当作业数量大于机器数量时，旨在尽量减少完成所有作业所需的总时间，似乎不一定能得到最优解！！！</span></p><p><span>比如 5 2 2</span></p><p><span>最优是5分钟，但是采取LPTF会导致5+2 2 =7分钟</span></p><hr /><p>&nbsp;</p><p><span>另有</span><strong><span>单机调度</span></strong><span>，多个任务 一台机，要求降低平均等待时间，按照</span><strong><span>最短处理时间优先</span></strong><span>（Shortest Processing Time First, SPTF）策略，也称为</span><strong><span>最短作业优先</span></strong><span>（Shortest Job First, SJF）策略,这种容易用反证法得到局部最优解是全局最优解</span></p><hr /><p>&nbsp;</p><h2 id='77哈夫曼编码---牵涉证明-nlogn'><span>7.7哈夫曼编码---牵涉证明 nlogn</span></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240617111825156.png" referrerpolicy="no-referrer" alt="image-20240617111825156"></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240617112410416.png" referrerpolicy="no-referrer" alt="image-20240617112410416"></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240617112640609.png" referrerpolicy="no-referrer" alt="image-20240617112640609"></p><h3 id='贪心策略-3'><span>贪心策略</span></h3><ol start='' ><li><p><strong><span>初始化</span></strong><span>：将字符集{d1, d2, ..., dn}中的每个字符视为一个节点，并将它们的频率{w1, w2, ..., wn}作为节点的权值。这些节点构成一个森林，每个节点是一棵树。</span></p></li><li><p><strong><span>构造哈夫曼树</span></strong><span>：</span></p><ul><li><p><strong><span>在森林中找出两个权值最小的树作为左右子树，合并它们形成一棵新树。新树的根节点权值为其左右子树根节点权值之和。</span></strong></p></li><li><p><span>重复上述步骤，直到森林中只剩下一棵树，这棵树就是哈夫曼树。</span></p></li></ul></li></ol><h3 id='最优子结构的证明反证法）'><span>最优子结构的证明（反证法）</span></h3><p><strong><span>假设</span></strong><span>：假设存在一种</span><strong><span>最优编码方案</span></strong><span>，其中某两个最不频繁的字符（假设为x和y，频率为</span><strong><span>wx和wy</span></strong><span>）没有在哈夫曼树中作为兄弟节点（即没有在同一次合并中被选中）。</span></p><p><strong><span>证明</span></strong><span>：</span></p><ol start='' ><li><p><span>在最优编码方案中，假设x和y不是兄弟节点，那么它们必定位于树的不同深度或者相同深度但不是兄弟节点。</span></p></li><li><p><span>根据哈夫曼树的构造过程，最不频繁的两个节点合并后形成的新节点的频率之和仍然是最小的，这保证了合并后的新树仍然是最优的。</span></p></li><li><p><span>如果x和y不是兄弟节点，我们可以找到两个节点a和b，使得a和b是兄弟节点，并且至少有一个的频率大于或等于x和y中的一个（不失一般性，假设为x）。</span></p></li><li><p><strong><span>将x与a或b中的一个交换，使x成为a或b的兄弟节点，这样做不会增加总的编码长度，因为x的频率小于或等于a或b，而x现在位于更低的深度或相同深度。</span></strong></p></li><li><p><strong><span>这表明原假设的编码方案不是最优的，因为我们找到了一个更优或等价的编码方案，即使x和y作为兄弟节点。</span></strong></p></li></ol><p><strong><span>结论</span></strong><span>：这与我们的假设矛盾，因此，最优的哈夫曼编码方案中，最不频繁的字符必须在哈夫曼树中作为兄弟节点，即直接相连。这证明了哈夫曼编码的最优子结构性质。</span></p><p><strong><span>命题</span></strong><span>1：两个最小权值字符对应的结点x和y必须是哈夫曼树中最深的两个结点且它们为兄弟。</span></p><p><span>命题1：两个最小权值字符对应的结点x和y必须是哈夫曼树中最深的两个结点且它们为兄弟。</span></p><p><span>命题2：设T是字符集C对应的一棵哈夫曼树，结点x和y是兄弟，它们的双亲为z，显然有wz = wx+wy，现删除结点x和y，让z变为叶子结点，那么这棵新树T1一定是字符集C1 = C - {x，y}∪{z}的最优树。</span></p><h3 id='命题1证明'><span>命题1证明</span></h3><p><strong><span>贪心思想</span></strong><span>：在构造哈夫曼树的过程中，每一步都选择两个最小权值的节点合并，以确保最终的树具有最小的加权路径长度。这是因为较小的权值如果放在较深的层次，对总的加权路径长度的贡献较小。</span></p><p><strong><span>证明</span></strong><span>：</span></p><ol start='' ><li><p><span>假设在哈夫曼树中，存在两个节点x和y，它们是权值最小的两个节点。</span></p></li><li><p><span>根据哈夫曼树的构造过程，每次都是选择两个最小权值的节点合并。因此，在最初的合并过程中，x和y会被首先合并，形成一个新的节点z。</span></p></li><li><p><span>合并后，x和y不可能再与其他节点进行合并，因为它们已经是z的子节点了。</span></p></li><li><p><span>由于每次合并都会减少一个节点，直到形成哈夫曼树，x和y作为最初合并的节点，它们在树中的位置必然是最深的。</span></p></li><li><p><span>因此，x和y必须是哈夫曼树中最深的两个节点且它们为兄弟。</span></p></li></ol><h3 id='命题2证明'><span>命题2证明</span></h3><p><strong><span>贪心思想</span></strong><span>：在构造哈夫曼树的过程中，每次选择两个最小权值的节点合并，目的是保证最终树的加权路径长度最小。删除最小权值的两个兄弟节点x和y，并将它们的父节点z变为叶子节点，相当于在字符集中替换x和y为它们的权值之和，这个操作不会影响哈夫曼树的最优性。</span></p><p><strong><span>证明</span></strong><span>：</span></p><ol start='' ><li><p><span>设T是字符集C对应的一棵哈夫曼树，x和y是兄弟节点，它们的权值之和为wz。</span></p></li><li><p><span>当删除x和y，将z变为叶子节点后，相当于在字符集C中替换了x和y为一个新字符z，其权值为wx+wy。</span></p></li><li><p><span>在新的字符集C1中，z的权值等于x和y的权值之和，这保持了权值的总和不变。</span></p></li><li><p><span>根据哈夫曼树的构造原则，合并任意两个最小权值的节点都是为了最小化加权路径长度。因此，将x和y替换为z后，对于新的字符集C1，构造出的新树T1仍然遵循了这一原则。</span></p></li><li><p><span>由于每一步合并都是贪心选择最小的两个权值进行合并，因此，删除x和y后得到的新树T1对于字符集C1依然是最优的，即最小化了加权路径长度。</span></p><p><span>这表明哈夫曼树的构造过程具有贪心选择性质，即局部最优选择能导致全局最优解</span></p></li></ol><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240617113731220.png" referrerpolicy="no-referrer" alt="image-20240617113731220"></p><h2 id='78流水线调度-johnson'><span>7.8流水线调度 johnson</span></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240617114854720.png" referrerpolicy="no-referrer" alt="image-20240617114854720"></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240617115324554.png" referrerpolicy="no-referrer" alt="image-20240617115324554"></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240617115411352.png" referrerpolicy="no-referrer" alt="image-20240617115411352"></p><p><span>解决这个流水作业调度问题的贪心策略之一是基于</span><strong><span>Johnson规则</span></strong><span>。Johnson规则适用于两台机器的情况，目标是最小化总完成时间。这个规则的核心思想是找到一种作业排序方式，使得作业在第一台机器上的加工顺序和在第二台机器上的加工顺序都尽可能地紧凑。</span></p><h3 id='johnson规则的步骤如下'><span>Johnson规则的步骤如下：</span></h3><ol start='' ><li><p><strong><span>对作业进行分组</span></strong><span>：</span></p><ul><li><p><span>将所有作业分为两个集合，集合A和集合B。</span></p></li><li><p><span>如果作业i的在M1上的加工时间</span><code>ai</code><span>小于在M2上的加工时间</span><code>bi</code><span>，则将作业i归入集合A；否则，归入集合B。</span></p></li></ul></li><li><p><strong><span>分别对两个集合内的作业排序</span></strong><span>：</span></p><ul><li><p><span>集合A中的作业按照M1上的加工时间</span><code>ai</code><span>升序排序。</span></p></li><li><p><span>集合B中的作业按照M2上的加工时间</span><code>bi</code><span>降序排序。</span></p></li></ul></li><li><p><strong><span>确定作业的最终加工顺序</span></strong><span>：</span></p><ul><li><p><span>按照集合A中的排序结果，然后是集合B中的排序结果，这样形成的序列即为作业的最优加工顺序。</span></p></li></ul></li></ol><h3 id='示例代码实现'><span>示例代码实现</span></h3><p><span>假设有n个作业，每个作业的在M1和M2上的加工时间分别存储在数组</span><code>a[]</code><span>和</span><code>b[]</code><span>中。</span></p><figure class='table-figure'><table><thead><tr><th><strong><span>编号</span></strong></th><th><strong><span>1</span></strong></th><th><strong><span>2</span></strong></th><th><strong><span>3</span></strong></th><th><strong><span>4</span></strong></th></tr></thead><tbody><tr><td><strong><span>M1</span></strong></td><td><strong><span>5</span></strong></td><td><strong><span>12</span></strong></td><td><strong><span>4</span></strong></td><td><strong><span>8</span></strong></td></tr><tr><td><strong><span>M2</span></strong></td><td><strong><span>6</span></strong></td><td><strong><span>2</span></strong></td><td><strong><span>14</span></strong></td><td><strong><span>7</span></strong></td></tr></tbody></table></figure><p>&nbsp;</p><ol start='' ><li><p><span>对作业进行分组 集合</span></p></li></ol><p><span>1和3显然在集合A 按M1升序排列 则顺序为 3 _ 1 _</span></p><p><span>2和4显然在集合B 按M2降序排列 则顺序为 </span><span>_</span><span>4</span><span>_</span><span>2</span><span>_</span></p><p><span>两个一合并就得到最优解3421</span></p><p><span>计算时间</span></p><p><code>f1[i]=f1[i-1]+a[best[i]]</code></p><p><code>f2[i]=max{f1[i-1],f2[i-1]}+v[best[i]]</code></p><p>&nbsp;</p><p>&nbsp;</p><h1 id='8动态规划-基于递归思想dynamic-programming'><span>8、动态规划-基于递归思想dynamic programming</span></h1><p><span>倒着想！ 一定从末尾想到头 然后确定头的边界条件 把从末尾到头部发生的可能的情况列出</span></p><h2 id='83最长子序列和-略-n个整数序列-on'><span>8.3最长子序列和 略 n个整数序列 On</span></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240617182102392.png" referrerpolicy="no-referrer" alt="image-20240617182102392"></p><p><span>边界条件 dp[0]=0 </span></p><p><span>dp[i]=max{dp[i-1]+a[i],a[i]}  1&lt;=i&lt;=n前i个数的最大连续子序列和</span></p><p><span>忘了就自己出两个数看一看</span></p><h2 id='84三角-从上到下挑选一条最短路on2'><span>8.4三角 从上到下挑选一条最短路On</span><sup><span>2</span></sup></h2><p><span>dp</span><span>[</span><span>1][1]=a</span><span>[</span><span>1</span><span>]</span><span>[</span><span>1</span><span>]</span></p><p><span>dp</span><span>[</span><span>i]</span><span>[</span><span>0]第一列</span></p><p><span>dp</span><span>[</span><span>i][i]对角线</span></p><p><span>dp</span><span>[</span><span>i][j]=min{dp</span><span>[</span><span>i-1][j-1],dp</span><span>[</span><span>i-1][j]}+a</span><span>[</span><span>i]</span><span>[</span><span>j] (非边界)</span></p><h2 id='85求解最长公共子序列-lcs怎么得'><span>8.5</span><strong><span>求解最长公共子序列</span></strong><span> LCS怎么得</span></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240617185047359.png" referrerpolicy="no-referrer" alt="image-20240617185047359"></p><p><span>假设两个序列X （1，2，3，...m）和Y（1，2，3，...,n）</span></p><p><span>定义二维动态规划数组</span></p><p><span>dp</span><span>[</span><span>i][j] ij为考虑X（1，2，3，...,i）考虑Y(1,2,3,...,j)时候的最长公共子序列的长度</span></p><p>&nbsp;</p><p><span>情况1 X[i]=Y[j]</span></p><p><span>dp</span><span>[</span><span>i][j]=dp</span><span>[</span><span>i-1][j-1]+1  那么dp就加1（多一种情况）   </span></p><p><span>情况2 X</span><span>[</span><span>i]!=Y</span><span>[</span><span>j]不同</span></p><p><span>那么我就从后往前找 两个里面选一个从后退一步 退一个数</span></p><p><span>dp</span><span>[</span><span>i][j]=max{dp</span><span>[</span><span>i-1][j] , dp</span><span>[</span><span>i][j-1]}，退一步不改变数量</span></p><p><span>走到头了dp</span><span>[</span><span>0][0]=0，因为我要从第1个开始</span></p><p><span>时间复杂度Omn 两个数组的大小乘积</span></p><p>&nbsp;</p><h2 id='86最长递增子序列-引入j-0ji-解决不是连续的情况'><span>8.6</span><strong><span>最长递增子序列</span></strong><span> 引入j 0&lt;=j&lt;i 解决不是连续的情况</span></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240617190123530.png" referrerpolicy="no-referrer" alt="image-20240617190123530"></p><p><span>给定数组a[1,2,...,n]</span></p><p><strong><span>dp[0]=0;</span></strong><span> </span></p><p><strong><span>dp[i] = 1 + max(dp[j]) 其中 0 &lt;= j &lt; i 且 a[j] &lt; a[i]</span></strong></p><h2 id='另外最长连续递增子序列'><span>另外最长连续递增子序列</span></h2><p><span>dp[i] = dp[i-1] + 1  如果 a[i] &gt; a[i-1]</span>
+<span>dp[i] = 1            如果 a[i] &lt;= a[i-1]前面一个数比后面一个大，那么动态规划清1，重新累加，很合理</span></p><h2 id='88--01背包-时间复杂度-o-空间x数量'><span>8.8  0/1背包 时间复杂度 O 空间x数量  </span></h2><p><span>例如,如果我们正在解决一个简单的背包问题,我们可以定义状态 dp</span><span>[</span><span>i][j]为前 i 个物品,总重量不超过 j 的最大价值.状态转移方程可以写为：</span>
+<strong><span>dp</span><span>[</span><span>i][j] = max(dp</span><span>[</span><span>i-1][j], dp</span><span>[</span><span>i-1][j-weight[i]] + value[i])</span></strong>
+<span>这个状态转移方程表示,对于前 i 个物品,我们可以选择不放入第 i 个物品,此时总价值为 dp</span><span>[</span><span>i-1][j]；或者我们可以选择放入第 i 个物品,此时总价值为 dp</span><span>[</span><span>i-1][j-weight[i]] + value[i].我们选择两者中的最大值作为 dp</span><span>[</span><span>i][j]的值.</span></p><p>&nbsp;</p><p><span>设置二维动态规划数组dp</span><span>[</span><span>i][r] i表示考虑前i个物品的情况，r表示背包剩余容量</span></p><p><span>边界条件</span></p><p><span>dp</span><span>[</span><span>i</span><span>]</span><span>[0]=0 不剩空间了</span></p><p><span>dp</span><span>[</span><span>0][r]=0 不剩物品了</span></p><p><span>dp</span><span>[</span><span>i][j]= dp</span><span>[</span><span>i-1]][r]   放不下物品</span></p><p><code>dp[i][j]=max{dp[i-1][r-w[i]]+v[i],dp[i-1][r]}; 放得下物品考虑放不放</code></p><p><span>注意01背包选择了当前的物品后直接返回一层</span></p><p><span>完全背包选择了当前的物品后还可以继续选，所以不立刻返回</span></p><p><span>放入,剩余空间缩小，价值增加，不放，空间价值不变，取其中max</span></p><p>&nbsp;</p><p><span>最后得到dp</span><span>[</span><span>n][r]=所求的最优价值 </span></p><p><span>解向量：需要手动模拟，代码层面直接记录 dp值变了肯定是用了</span></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='89求解完全背包问题-略'><span>8.9</span><strong><span>求解完全背包问题</span></strong><span> 略</span></h2><p><span>完全背包问题是一种典型的动态规划问题，它与0-1背包问题类似，但区别在于每种物品可以选择无限次。给定n种物品和一个容量为W的背包，物品i的重量是</span><code>w[i]</code><span>，价值是</span><code>v[i]</code><span>。求解将哪些物品装入背包可使这些物品的总价值最大，同时确保总重量不超过背包的容量。</span></p><h3 id='状态转移方程'><span>状态转移方程</span></h3><p><span>定义</span><code>dp[i][j]</code><span>为考虑前i种物品，当前背包容量为j时的最大价值。状态转移方程如下：</span></p><p><code>dp[i][j] = max{dp[i-1][j], dp[i][j-w[i]] + v[i]}</code></p><p><span>注意选择了物品的情况 没有立刻返回</span></p><p><span>解释：</span></p><ul><li><p><code>dp[i-1][j]</code><span>表示不选择当前第i种物品的情况。</span></p></li><li><p><code>dp[i][j-w[i]] + v[i]</code><span>表示选择当前第i种物品的情况，由于是完全背包，选择一次后仍可以继续选择，因此是</span><code>dp[i][...]</code><span>而不是</span><code>dp[i-1][...]</code><span>。</span></p></li></ul><h3 id='初始化'><span>初始化</span></h3><ul><li><p><code>dp[0][...] = 0</code><span>：没有物品时，价值为0。</span></p></li><li><p><code>dp[...][0] = 0</code><span>：背包容量为0时，价值为0。</span></p></li></ul><h2></h2><h2 id='810n个商店-m个员工-资源分配-略'><span>8.10n个商店 m个员工 资源分配 略</span></h2><p><span>i表示考虑1~i个商店的情况 1&lt;=i&lt;=n</span></p><p><span>从后往前跑dp</span><span>[</span><span>i][m] = max(dp</span><span>[</span><span>i-1][m-j] + profit(i, j)) 对于所有 0 &lt;= j &lt;= m </span><code>profit(i, j)</code><span>表示将j个员工分配给第i个商店所获得的盈利</span></p><p><span>最佳盈利是dp</span><span>[</span><span>n][m]</span></p><p>&nbsp;</p><h2 id='811会议安排-略'><span>8.11会议安排 略</span></h2><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240617193720840.png" referrerpolicy="no-referrer" alt="image-20240617193720840"></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240617193727098.png" referrerpolicy="no-referrer" alt="image-20240617193727098"></p><p><span>贪心+动态规划nlogn</span></p><p><span>dp[i]表示A[0,..i]的订单中所有兼容订单的最长时间</span></p><p><span>dp</span><span>[</span><span>0]=t[0]</span></p><p><span>dp</span><span>[</span><span>i]=max{dp</span><span>[</span><span>i-1],dp</span><span>[</span><span>j]+t[i]} j表示第i个活动之前结束的最后一个活动的索引</span></p><h2 id='812滚动数组不看'><span>8.12滚动数组不看</span></h2><h1 id='重点多看'><span>重点多看</span></h1><h2 id='总结01背包'><span>总结0/1背包</span></h2><p><span>第一种是要求物品质量刚好是W，这种用回溯 左右剪枝基于重量</span></p><p><span>第二种是要求物品质量不超过W，回溯与分支限界类似</span></p><h3 id='回溯'><span>回溯</span></h3><p><span>W为限制总重量，</span></p><p><span>令</span></p><p><span>i为操作步骤，No为物品编号，wi为物品i的重量，vi为物品i的价值，vi/wi为物品的单位价值。物品按单位价值从高到低降序排列</span></p><p><span>左剪枝条件：仅考虑</span><code>totalWeight+weight[i]≤W</code><span>的左孩子节点</span></p><p><span>右剪枝:仅考虑</span><code>upperBound(i,totalWeight,totalValue)≥maxv</code><span>的右孩子节点，</span></p><p><span>其中upperbound为上界价值函数（需要参数为：当前操作步骤数、总重量、总价值），用于贪心求解上界价值，maxv为当前已搜索到的最高价值。然后开始绘制子集树，时间复杂度T(n)=O(2</span><sup><span>n</span></sup><span>)</span></p><p><strong><span>重点：遍历顺序是严格按照（DFS）</span></strong></p><h3 id='队列式分支限界'><span>队列式分支限界</span></h3><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240616154424524.png" referrerpolicy="no-referrer" alt="image-20240616154424524"></p><h3 id='队列式分支限界法'><span>队列式分支限界法</span></h3><p><strong><span>重点是遍历顺序严格按照（BFS）</span></strong></p><p><span>W为限制总重量，</span></p><p><span>令</span></p><p><span>i为操作步骤，No为物品编号，wi为物品i的重量，vi为物品i的价值，vi/wi为物品的单位价值。物品按单位价值从高到低降序排列。</span></p><p><span>初始化一个队列queue，首先将根节点（没有任何物品被选择，总重量和总价值都为0）加入队列。</span></p><p><span>对于队列中的每个Node，进行如下操作：</span></p><ol start='' ><li><p><strong><span>生成子节点</span></strong><span>：对于节点Node，生成两个子节点Node1和Node2。Node1代表选择当前考虑的物品i（如果加入该物品后总重量不超过W），Node2代表不选择当前考虑的物品i。</span></p><ul><li><p><strong><span>左剪枝条件</span></strong><span>：对于左孩子(Node1)，仅当</span><code>Node1.totalWeight + w[Node1.i] ≤ W</code><span>时，才考虑这个左孩子节点，否则进行剪枝。</span></p></li><li><p><strong><span>右剪枝条件</span></strong><span>：对于右孩子(Node2），仅当</span><code>Node2.upperBound≥ maxv</code><span>时，考虑这个右孩子节点。其中</span><code>upperBound</code><span>为上界价值函数，用于贪心求解上界价值；</span><code>maxv</code><span>为当前已搜索到的最高价值。</span></p></li></ul></li></ol><p><span>最终，</span><code>maxv</code><span>即为0/1背包问题的解。</span></p><p><span>时间复杂度T(n)主要取决于队列中节点的数量，理论上最坏情况下与回溯法相同，为O(2</span><sup><span>n</span></sup><span>)，但实际上由于剪枝的效果，通常会显著低于O(2</span><sup><span>n</span></sup><span>)。</span></p><hr /><h3 id='优先队列式分支限界'><span>优先队列式分支限界</span></h3><p><strong><span>重点是出队顺序和遍历顺序是基于高价值优先，即优先遍历“要选”，其次是“不选”</span></strong></p><p><img src="https://raw.githubusercontent.com/mozhongzhou/myPict_img/main/pic/image-20240616154410519.png" referrerpolicy="no-referrer" alt="image-20240616154410519"></p><p><span>W为限制总重量，</span></p><ol start='' ><li><p><span>令</span></p><p><span>i为操作步骤，No为物品编号，wi为物品i的重量，vi为物品i的价值，vi/wi为物品的单位价值。物品按单位价值从高到低降序排列。</span></p></li><li><p><strong><span>初始化</span></strong><span>：定义一个优先队列</span><code>priorityQueue</code><span>，按照某种策略（如上界价值或当前价值）优先级排序，首先将根节点（没有任何物品被选择，总重量和总价值都为0，步骤i=0）加入优先队列。</span></p></li><li><p><strong><span>循环处理队列中的节点</span></strong><span>：</span></p><ul><li><p><span>从</span><code>priorityQueue</code><span>中取出一个节点Node（优先级最高的节点），进行扩展。</span></p></li><li><p><span>对于节点Node，生成两个子节点Node1和Node2。Node1代表选择当前考虑的物品i（如果加入该物品后总重量不超过W），Node2代表不选择当前考虑的物品i。</span></p><ul><li><p><strong><span>左剪枝条件</span></strong><span>：对于Node1，仅当</span><code>Node1.totalWeight + w[Node1.i] ≤ W</code><span>时，才考虑这个左孩子节点，否则进行剪枝。</span></p></li><li><p><strong><span>右剪枝条件</span></strong><span>：对于Node1和Node2，计算</span><code>upperBound</code><span>，仅当</span><code>upperBound ≥ maxv</code><span>时，考虑这个子节点。</span><code>upperBound</code><span>为上界价值函数，用于贪心求解上界价值；</span><code>maxv</code><span>为当前已搜索到的最高价值。</span></p></li></ul></li></ul></li></ol><p>&nbsp;</p><p><strong><span>时间复杂度</span></strong><span>：T(n)主要取决于优先队列中节点的数量和处理每个节点的时间。由于使用了优先队列和剪枝策略，虽然理论上最坏情况仍然是O(2</span><sup><span>n</span></sup><span>)，但实际运行时间通常会显著低于回溯法和简单的队列式分支限界法。</span></p><p>&nbsp;</p><h1 id='时间复杂度汇总'><span>时间复杂度汇总</span></h1><ol start='' ><li><p><span>分治：有序数列折半查找（二分查找 计算中点） logn  砍掉一半 只分不合</span></p></li><li><p><span>分治：两个等长有序序列中位数 logn 一半一半地砍掉 只分不合</span></p></li><li><p><span>分治：寻找第k小 n  双指针算法 确定基准，移动大于、小于基准地元素到同侧，计算小于基准的元素个数  边调整位置边比较  平均来看是n 最坏n</span><sup><span>2</span></sup></p></li><li><p><span>分治：一个无序列表查找最大和次大  n </span></p><blockquote><p><span>时间复杂度分析：</span></p><ul><li><p><span>对于 </span><strong><span>n</span></strong><span> 个元素，分治法在每一层递归中大约需要 </span><strong><span>n/2</span></strong><span> 次比较来找到最大元素（因为每次比较都是成对出现的）。</span></p></li><li><p><span>对于次大元素的查找，由于次大元素是在最大元素的“对手”中选出的，这个过程的比较次数不会超过最大元素在其胜利路径上的比较次数，大约是 </span><strong><span>logn</span></strong><span> 次（因为每一层递归最大元素都需要比较一次）。</span></p></li><li><p><span>因此，总的比较次数大约是 </span><strong><span>n + logn</span></strong><span>，这仍然是 </span><strong><span>O(n)</span></strong><span> 的时间复杂度。</span></p></li></ul><p>&nbsp;</p><p><span>为什么不是O(nlogn)？</span></p><p>&nbsp;</p><p><span>尽管分治法听起来像是每次都将问题规模减半，似乎应该导致 </span><strong><span>O(nlogn)</span></strong><span> 的时间复杂度，但实际上，由于在合并步骤中并没有对所有元素进行全面的比较，而是只在有限的“对手”中选择次大元素，因此避免了额外的比较开销，使得总体时间复杂度保持在 </span><strong><span>O(n)</span></strong><span>。这与排序不同，排序需要在每一层递归中对元素进行更全面的比较和排列，导致了 </span><strong><span>O(nlogn)</span></strong><span> 的时间复杂度。</span></p></blockquote></li><li><p><span>分治：二路归并 无论自顶向下或是自底向上 nlogn ----排序 分logn了又合n</span></p></li><li><p><span>分治：最大连续子序列和（分治）nlogn 折半分 左侧 右侧 中间 取三者最大 分了又合</span></p></li><li><p><span>蛮力：连续子序列 n</span><sup><span>3</span></sup><span> 可优化到 n</span><sup><span>2</span></sup><span>  三重循环的过程：一重设置起点 二重设置重点 三重 计算从起点到重点得到的子序列和 优化是把第三步融入到第二步</span></p></li><li><p><span>蛮力：幂集 n*2</span><sup><span>n</span></sup><span>  指数级 先构造0~2</span><sup><span>n</span></sup><span>-1大小的空间存放每个整数  每个整数代表一个子集（二进制表示）遍历每个数需要n 合并在一起就是幂集 </span></p></li><li><p><span>蛮力：全排列 n*(n!)  插空法 把新的元素插入上一步生成的空隙中 指数级</span></p></li></ol><h1 id='上下界剪枝函数理解'><span>上下界剪枝函数理解</span></h1><p><span>例如0/1背包 仅考虑上界upperBound≥maxValue的情况</span></p><p><span>上界函数计算过程是：按单位价值排好序后，从上到下能装就装，遇到装不到的就用乘法去乘权重（虽然不合题目要求，但是是上界，辅助剪枝）</span></p><p><span>类似的 队列式/优先队列式剪枝 任务分配/流水线 要求最短时间</span></p><p><span>设置下界函数lowerBound </span></p><p><span>仅考虑lowerBound≤minCost的情况</span></p><p><span>例如任务分配，把i号人依次分配到1，2，3，4号任务上，分配的是人，那么lowerBound=确定的时间+每个人不管(限制)选取最适合自己的方案所产生的时间</span></p><p>&nbsp;</p><p><span>对于实际问题，剪枝设置方法不同</span></p><h1 id='比较问题'><span>比较问题？</span></h1><p><span>分治法、蛮力法、回溯法、分支限界法、贪心法和动态规划是解决问题的常见算法策略，它们在解决问题的方式、效率、适用场景等方面有着显著的不同。以下是这些策略之间值得比较的几个关键方面：</span></p><ol start='' ><li><p><strong><span>基本思想</span></strong><span>：</span></p><ul><li><p><strong><span>分治法</span></strong><span>：将原问题分解为若干个规模较小但类似于原问题的子问题，递归解决这些子问题，然后合并这些子问题的解以得到原问题的解。</span></p></li><li><p><strong><span>蛮力法</span></strong><span>（暴力法）：尝试问题的所有可能状态，直到找到问题的解。</span></p></li><li><p><strong><span>回溯法</span></strong><span>：通过试错来找到问题的解，它尝试分步的去解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答时，它将取消上一步甚至是上几步的计算，再通过其他可能的分步解答再次尝试寻找问题的解。</span></p></li><li><p><strong><span>分支限界法</span></strong><span>：类似于回溯法，但是采用广度优先或最小成本优先策略，通过维护一个全局变量（如最小成本）来避免无望的路径。</span></p></li><li><p><strong><span>贪心法</span></strong><span>：在对问题求解时，总是做出在当前看来是最好的选择，不从整体最优解考虑，只求局部最优解。</span></p></li><li><p><strong><span>动态规划</span></strong><span>：将复杂问题分解成小问题进行解决，小问题的解会被保存以便以后重用，以达到减少计算量的目的。</span></p></li></ul></li><li><p><strong><span>效率</span></strong><span>：</span></p><ul><li><p><strong><span>蛮力法</span></strong><span>往往效率最低，因为它尝试所有可能的解。</span></p></li><li><p><strong><span>分治法</span></strong><span>和</span><strong><span>动态规划</span></strong><span>通常效率较高，因为它们减少了不必要的计算。</span></p></li><li><p><strong><span>回溯法</span></strong><span>和</span><strong><span>分支限界法</span></strong><span>的效率介于两者之间，取决于剪枝的效果。</span></p></li><li><p><strong><span>贪心法</span></strong><span>通常运行速度最快，但不总是能得到全局最优解。</span></p></li></ul></li><li><p><strong><span>适用场景</span></strong><span>：</span></p><ul><li><p><strong><span>分治法</span></strong><span>适用于问题可以被分解为独立子问题的情况。</span></p></li><li><p><strong><span>蛮力法</span></strong><span>适用于问题规模较小，或者没有更好的算法时。</span></p></li><li><p><strong><span>回溯法</span></strong><span>适用于需要遍历所有可能状态的问题，如排列、组合、子集问题。</span></p></li><li><p><strong><span>分支限界法</span></strong><span>适用于求解优化问题，特别是在状态空间树的搜索中。</span></p></li><li><p><strong><span>贪心法</span></strong><span>适用于问题的局部最优解能决定全局最优解的情况。</span></p></li><li><p><strong><span>动态规划</span></strong><span>适用于有重叠子问题和最优子结构性质的问题。</span></p></li></ul></li><li><p><strong><span>是否保证最优解</span></strong><span>：</span></p><ul><li><p><strong><span>蛮力法</span></strong><span>、</span><strong><span>分治法</span></strong><span>、</span><strong><span>回溯法</span></strong><span>、</span><strong><span>分支限界法</span></strong><span>和</span><strong><span>动态规划</span></strong><span>通常能保证找到最优解。</span></p></li><li><p><strong><span>贪心法</span></strong><span>不总是能保证找到全局最优解，但在某些问题上能提供一个足够好的解。</span></p></li></ul></li></ol><p>&nbsp;</p><p>&nbsp;</p><h1 id='背包问题'><span>背包问题</span></h1><p><span>携带重量刚好为W</span></p><p><span>携带重量不超过W</span></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='01背包'><span>0/1背包</span></h2><p><span>每个物品只能选或不选</span></p><h2 id='完全背包'><span>完全背包</span></h2><p><span>每个物品可以选择无限次</span></p><h2 id='多重背包'><span>多重背包</span></h2><p><span>每个物品可以选择有限次</span></p><h2 id='分数背包'><span>分数背包</span></h2><p><span>每个物品可以选择一部分</span></p><p><span>用贪心策略，每次选择单位重量价值最大的物品即可，很好理解</span></p><p><span>同样的反证法，</span></p><p><span>假设存在唯一最优解S&#39;，且其解空间中存在物品没有按单位重量价值递减的顺序被消耗的情况，则始终可以用部分同质量的单位价值高的未被使用的物品，去替换部分同质量的单位重量价值低的物品，得到的S&#39;&#39;一定优于S&#39;,这便产生矛盾.进一步，由于贪心选择的解S在每一步都是局部最优的，且比任何其他解更优，因此S也是全局最优解。</span></p><p>&nbsp;</p><h1 id='应用'><span>应用</span></h1><h2 id='任务分配nn矩阵内n个人n项任务'><span>任务分配,n*n矩阵内n个人,n项任务</span></h2><p>&nbsp;</p><h2 id='活动安排-不冲突求最多活动'><span>活动安排 不冲突求最多活动</span></h2><p><span>贪心nlogn</span></p><h2 id='流水线-m1-m2'><span>流水线 M1 M2</span></h2><p><span>f1[i]=f1[i-1]+M1[i] </span></p><p><span>f2[i]=max{f1[i-1],f2[i-1]}+M2[i]</span></p><p><span>贪心nlogn</span></p><h2 id='多机调度-n台机-大于n个任务-求最短时间'><span>多机调度 n台机 大于n个任务 求最短时间</span></h2></div></div>
+</body>
+</html>
